@@ -1,0 +1,205 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 1 – Day 1 Java Basics, Features, JDK, JRE, JVM ☕
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Java is a **high-level, object-oriented, platform-independent programming language**.
+
+👉 Widely used for:
+
+* Web Development
+* Android Apps
+* Enterprise Systems
+* Backend Development
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔤 1. What is Java?
+
+Java is a programming language developed by **Sun Microsystems (now Oracle)**.
+
+👉 Key Idea:
+
+```text
+Write Once, Run Anywhere (WORA)
+```
+
+---
+
+📌 Simple Java Program
+
+```java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+---
+
+🔍 Explanation
+
+* `class` → Blueprint of program
+* `main()` → Entry point of execution
+* `System.out.println()` → Prints output
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚡ 2. Features of Java
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Platform Independent
+
+✔ Runs on any OS using JVM
+
+---
+
+🔹 Object-Oriented
+
+✔ Uses concepts like:
+
+* Class
+* Object
+* Inheritance
+* Polymorphism
+
+---
+
+🔹 Simple
+
+✔ Easy syntax compared to C++
+
+---
+
+🔹 Secure
+
+✔ No direct memory access
+✔ Bytecode verification
+
+---
+
+🔹 Robust
+
+✔ Strong memory management
+✔ Exception handling
+
+---
+
+🔹 Multithreaded
+
+✔ Supports multiple tasks at once
+
+---
+
+🔹 High Performance
+
+✔ Uses Just-In-Time (JIT) compiler
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 3. JDK, JRE, JVM (MOST IMPORTANT 🔥)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 JVM (Java Virtual Machine)
+
+👉 JVM is responsible for **running Java programs**
+
+✔ Converts bytecode → machine code
+✔ Platform dependent
+
+---
+
+🔹 JRE (Java Runtime Environment)
+
+👉 Provides environment to run Java programs
+
+Includes:
+
+* JVM
+* Libraries
+
+✔ Required to execute Java code
+
+---
+
+🔹 JDK (Java Development Kit)
+
+👉 Complete package for developers
+
+Includes:
+
+* JRE
+* Compiler (javac)
+* Tools
+
+✔ Required to develop Java programs
+
+---
+
+📊 Relationship
+
+```text
+JDK = JRE + Development Tools
+JRE = JVM + Libraries
+```
+
+---
+
+🔁 Execution Flow of Java Program
+
+1️⃣ Write code (.java file)
+2️⃣ Compile using javac → bytecode (.class)
+3️⃣ JVM executes bytecode
+
+---
+
+📌 Flow Diagram (Concept)
+
+```text
+.java → Compiler → .class → JVM → Output
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Why Java is Popular?
+
+✔ Platform independent
+✔ Strong community support
+✔ Used in big companies
+✔ Secure & scalable
+
+---
+
+⚠️ Limitations of Java
+
+❌ Slower than C/C++
+❌ More memory usage
+❌ Verbose syntax
+
+---
+
+🧠 Real-World Usage
+
+Java is used in:
+
+* Banking systems
+* Android apps
+* Web applications
+* Enterprise software
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Java is platform-independent
+✔ JVM executes Java programs
+✔ JRE provides a runtime environment
+✔ JDK is used for development
+✔ Java follows Object-Oriented principles
+
