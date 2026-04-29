@@ -1,0 +1,184 @@
+Here’s your **GitHub-ready Markdown note (same style)** for:
+
+---
+
+```text
+Week-1/Day-2-Setting-Up-Environment-Hello-World.md
+```
+
+---
+
+# 🚀 Week 1 – Day 2
+
+# Setting Up Environment & Hello World Program ☕
+
+---
+
+# 🧠 Introduction
+
+Before writing Java programs, you need to **set up the development environment**.
+
+👉 This ensures your system can **compile and run Java code properly**.
+
+---
+
+# ⚙️ 1. Install JDK
+
+👉 Download JDK from:
+
+* Oracle Website
+* OpenJDK
+
+✔ JDK includes:
+
+* Compiler (`javac`)
+* JVM
+* Libraries & tools
+
+---
+
+# 🔧 2. Set Environment Variables
+
+## 📌 Why?
+
+👉 To run Java from anywhere in your system
+
+---
+
+## 🪟 Steps (Windows)
+
+1. Open **Environment Variables**
+2. Add new variable:
+
+```text
+JAVA_HOME = C:\Program Files\Java\jdk-xx
+```
+
+3. Edit **Path** → Add:
+
+```text
+%JAVA_HOME%\bin
+```
+
+---
+
+# ✅ 3. Verify Installation
+
+Open Command Prompt and run:
+
+```bash
+java -version
+javac -version
+```
+
+✔ If versions are shown → Setup successful 🎉
+
+---
+
+# 💻 4. Write First Java Program
+
+Create a file:
+
+```text
+HelloWorld.java
+```
+
+---
+
+# 📌 Code
+
+```java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+---
+
+# 🔍 Explanation
+
+* `class` → Defines a class
+* `main()` → Entry point of program
+* `System.out.println()` → Displays output
+
+---
+
+# ▶️ 5. Compile & Run Program
+
+---
+
+## 🔹 Compile
+
+```bash
+javac HelloWorld.java
+```
+
+👉 Output: `HelloWorld.class`
+
+---
+
+## 🔹 Run
+
+```bash
+java HelloWorld
+```
+
+👉 Output:
+
+```text
+Hello, World!
+```
+
+---
+
+# 🔁 Execution Flow
+
+```text
+.java → javac → .class → JVM → Output
+```
+
+---
+
+# ⚠️ Common Errors
+
+❌ JDK not installed properly
+❌ Path not set correctly
+❌ File name ≠ Class name
+❌ Missing semicolon
+
+---
+
+# 🎯 Why This is Important?
+
+✔ First step in Java development
+✔ Helps understand compilation process
+✔ Required for all Java programs
+
+---
+
+# 📚 Key Takeaways
+
+✔ Install JDK to start coding
+✔ Set `JAVA_HOME` and Path
+✔ Use `javac` to compile
+✔ Use `java` to run programs
+✔ `main()` is mandatory entry point
+
+---
+
+# 📅 Next Topic
+
+```text
+Week 1 – Day 3
+Data Types, Variables & Operators
+```
+
+---
+
+If you want next, I can create:
+
+🔥 Day 3 notes (Data Types + Operators)
+🔥 Java practice questions
+🔥 Interview questions (VERY IMPORTANT) 🚀
