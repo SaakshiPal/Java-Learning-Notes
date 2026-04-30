@@ -1,0 +1,177 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 1 – Day 3 Java Program Structure & Execution Flow ☕
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+To write efficient Java programs, you must understand:
+
+✔ How a Java program is structured
+✔ How it gets executed
+
+👉 This is **very important for interviews 🔥**
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 1. Structure of a Java Program
+
+A basic Java program consists of:
+
+1️⃣ Package (optional)
+2️⃣ Import statements (optional)
+3️⃣ Class definition
+4️⃣ Main method
+5️⃣ Statements (logic)
+
+---
+
+📌 Example Program
+
+```java id="ex2k91"
+package mypackage;
+
+import java.util.*;
+
+public class HelloWorld {
+
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔍 Breakdown
+
+🔹 Package
+
+👉 Groups related classes
+
+```java
+package mypackage;
+```
+
+---
+
+🔹 Import
+
+👉 Used to access built-in classes
+
+```java
+import java.util.*;
+```
+
+---
+
+🔹 Class
+
+👉 Blueprint of program
+
+```java
+public class HelloWorld
+```
+
+---
+
+🔹 Main Method
+
+👉 Entry point of execution
+
+```java
+public static void main(String[] args)
+```
+
+---
+
+🔹 Statements
+
+👉 Actual logic
+
+```java
+System.out.println("Hello, Java!");
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚡ 2. Execution Flow of Java Program
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔁 Step-by-Step Flow
+
+1️⃣ Write code → `.java` file
+2️⃣ Compile using `javac`
+3️⃣ Generate `.class` file (bytecode)
+4️⃣ JVM executes bytecode
+5️⃣ Output is displayed
+
+---
+
+📊 Flow Diagram
+
+```text id="bq3y6h"
+.java → Compiler (javac) → .class → JVM → Output
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔍 Behind the Scenes
+
+🔹 Compilation Phase
+
+✔ Converts source code → bytecode
+✔ Checks syntax errors
+
+---
+
+🔹 Execution Phase
+
+✔ JVM loads class
+✔ Verifies bytecode
+✔ Executes using interpreter/JIT
+
+---
+
+⚙️ JVM Components (Basic Idea)
+
+* Class Loader → Loads class files
+* Bytecode Verifier → Checks security
+* Execution Engine → Runs code
+
+---
+
+🎯 Important Points
+
+✔ Java is both **compiled + interpreted**
+✔ Bytecode makes Java platform-independent
+✔ JVM makes it platform-dependent at runtime
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Mistakes
+
+❌ Missing `main()` method
+❌ Wrong class name
+❌ Syntax errors
+❌ Not compiling before running
+
+---
+
+🧠 Why This Matters?
+
+✔ Helps debug errors
+✔ Important for interviews
+✔ Builds strong fundamentals
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Java program has structured components
+✔ `main()` is the entry point
+✔ Code → compiled → bytecode → executed by JVM
+✔ JVM handles execution
+
