@@ -1,20 +1,10 @@
-Here’s your **GitHub-ready Markdown note (same style)** for:
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
----
+🚀 Week 1 – Day 2 Setting Up Environment & Hello World Program ☕
 
-```text
-Week-1/Day-2-Setting-Up-Environment-Hello-World.md
-```
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
----
-
-# 🚀 Week 1 – Day 2
-
-# Setting Up Environment & Hello World Program ☕
-
----
-
-# 🧠 Introduction
+🧠 Introduction
 
 Before writing Java programs, you need to **set up the development environment**.
 
@@ -22,7 +12,7 @@ Before writing Java programs, you need to **set up the development environment**
 
 ---
 
-# ⚙️ 1. Install JDK
+⚙️ 1. Install JDK
 
 👉 Download JDK from:
 
@@ -35,17 +25,17 @@ Before writing Java programs, you need to **set up the development environment**
 * JVM
 * Libraries & tools
 
----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# 🔧 2. Set Environment Variables
+🔧 2. Set Environment Variables
 
-## 📌 Why?
+📌 Why?
 
 👉 To run Java from anywhere in your system
 
 ---
 
-## 🪟 Steps (Windows)
+🪟 Steps (Windows)
 
 1. Open **Environment Variables**
 2. Add new variable:
@@ -60,9 +50,9 @@ JAVA_HOME = C:\Program Files\Java\jdk-xx
 %JAVA_HOME%\bin
 ```
 
----
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------k
 
-# ✅ 3. Verify Installation
+✅ 3. Verify Installation
 
 Open Command Prompt and run:
 
@@ -75,7 +65,7 @@ javac -version
 
 ---
 
-# 💻 4. Write First Java Program
+💻 4. Write First Java Program
 
 Create a file:
 
@@ -85,7 +75,7 @@ HelloWorld.java
 
 ---
 
-# 📌 Code
+📌 Code
 
 ```java
 class HelloWorld {
@@ -97,19 +87,19 @@ class HelloWorld {
 
 ---
 
-# 🔍 Explanation
+🔍 Explanation
 
 * `class` → Defines a class
 * `main()` → Entry point of program
 * `System.out.println()` → Displays output
 
----
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# ▶️ 5. Compile & Run Program
+▶️ 5. Compile & Run Program
 
----
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## 🔹 Compile
+🔹 Compile
 
 ```bash
 javac HelloWorld.java
@@ -119,7 +109,7 @@ javac HelloWorld.java
 
 ---
 
-## 🔹 Run
+🔹 Run
 
 ```bash
 java HelloWorld
@@ -133,15 +123,15 @@ Hello, World!
 
 ---
 
-# 🔁 Execution Flow
+🔁 Execution Flow
 
 ```text
 .java → javac → .class → JVM → Output
 ```
 
----
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# ⚠️ Common Errors
+⚠️ Common Errors
 
 ❌ JDK not installed properly
 ❌ Path not set correctly
@@ -150,15 +140,15 @@ Hello, World!
 
 ---
 
-# 🎯 Why This is Important?
+🎯 Why This is Important?
 
 ✔ First step in Java development
 ✔ Helps understand compilation process
 ✔ Required for all Java programs
 
----
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# 📚 Key Takeaways
+📚 Key Takeaways
 
 ✔ Install JDK to start coding
 ✔ Set `JAVA_HOME` and Path
@@ -166,19 +156,4 @@ Hello, World!
 ✔ Use `java` to run programs
 ✔ `main()` is mandatory entry point
 
----
 
-# 📅 Next Topic
-
-```text
-Week 1 – Day 3
-Data Types, Variables & Operators
-```
-
----
-
-If you want next, I can create:
-
-🔥 Day 3 notes (Data Types + Operators)
-🔥 Java practice questions
-🔥 Interview questions (VERY IMPORTANT) 🚀
