@@ -1,0 +1,177 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 1 – Day 4 Syntax, Identifiers & Data Types ☕
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+To write correct Java programs, you must understand:
+
+✔ Java syntax rules
+✔ Identifiers (naming rules)
+✔ Data types (types of data stored)
+
+👉 These are **fundamental concepts for coding & interviews 🔥**
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔤 1. Java Syntax
+
+Syntax defines the **rules to write Java code correctly**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Basic Syntax Rules
+
+✔ Java is **case-sensitive**
+✔ Every statement ends with `;`
+✔ Code is written inside `{ }`
+✔ File name = Class name
+
+---
+
+📌 Example
+
+```java id="syn1"
+public class Demo {
+    public static void main(String[] args) {
+        System.out.println("Java Syntax Example");
+    }
+}
+```
+
+---
+
+⚠️ Common Syntax Errors
+
+❌ Missing semicolon `;`
+❌ Incorrect brackets `{ }`
+❌ Wrong class/file name
+❌ Case mismatch
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔠 2. Identifiers in Java
+
+Identifiers are **names given to variables, classes, methods, etc.**
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Rules for Identifiers
+
+✔ Must start with letter, `_`, or `$`
+✔ Cannot start with number
+✔ Cannot use keywords
+✔ Case-sensitive
+
+---
+
+📌 Valid Examples
+
+```java id="id1"
+int age;
+String name;
+double salary;
+```
+
+---
+
+❌ Invalid Examples
+
+```java id="id2"
+int 123age;     // starts with number
+int class;      // keyword
+int my-name;    // invalid character
+```
+
+---
+
+💡 Naming Conventions (Best Practice)
+
+✔ Class → PascalCase (`StudentData`)
+✔ Variable → camelCase (`studentName`)
+✔ Constant → UPPER_CASE (`MAX_VALUE`)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔢 3. Data Types in Java
+
+Data types define **what type of data a variable can store**.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Types of Data Types
+
+🔹 1. Primitive Data Types
+
+👉 Basic built-in types
+
+| Type    | Size    | Example    |
+| ------- | ------- | ---------- |
+| int     | 4 bytes | 10         |
+| float   | 4 bytes | 3.14f      |
+| double  | 8 bytes | 3.14159    |
+| char    | 2 bytes | 'A'        |
+| boolean | 1 bit   | true/false |
+| byte    | 1 byte  | 100        |
+| short   | 2 bytes | 200        |
+| long    | 8 bytes | 100000L    |
+
+---
+
+🔹 2. Non-Primitive Data Types
+
+👉 Reference types
+
+* String
+* Arrays
+* Classes
+* Objects
+
+---
+
+📌 Example
+
+```java id="dt1"
+int age = 20;
+double price = 99.99;
+char grade = 'A';
+boolean isPassed = true;
+```
+
+---
+
+🎯 Why Data Types Matter?
+
+✔ Define memory usage
+✔ Ensure correct operations
+✔ Improve performance
+
+---
+
+⚠️ Common Mistakes
+
+❌ Using wrong data type
+❌ Forgetting suffix (e.g., `f`, `L`)
+❌ Type mismatch
+
+---
+
+🧠 Real Insight
+
+👉 Choosing correct data type:
+
+* Saves memory
+* Improves efficiency
+* Prevents bugs
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Syntax defines structure of Java code
+✔ Identifiers follow naming rules
+✔ Data types define type of data
+✔ Primitive & Non-primitive types exist
+
