@@ -1,0 +1,199 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 1 – Day 5 Variables, Literals & Type Casting ☕
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+To store and manipulate data in Java, you must understand:
+
+✔ Variables
+✔ Literals
+✔ Type Casting
+
+👉 These are **core concepts for coding & interviews 🔥**
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔢 1. Variables in Java
+
+A variable is a **container to store data**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="var1"
+dataType variableName = value;
+```
+
+---
+
+📌 Examples
+
+```java id="var2"
+int age = 20;
+double price = 99.99;
+char grade = 'A';
+boolean isActive = true;
+```
+
+---
+
+📌 Types of Variables
+
+🔹 Local Variable
+
+✔ Declared inside method
+✔ Scope limited to method
+
+🔹 Instance Variable
+
+✔ Declared inside class, outside method
+✔ Belongs to object
+
+🔹 Static Variable
+
+✔ Declared with `static` keyword
+✔ Shared among all objects
+
+---
+
+⚠️ Rules for Variables
+
+✔ Must be declared before use
+✔ Cannot use same name in same scope
+✔ Should follow naming conventions
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔤 2. Literals in Java
+
+Literals are **fixed values assigned to variables**.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Types of Literals
+
+🔹 Integer Literals
+
+```java id="lit1"
+int x = 10;
+int binary = 0b1010;
+int hex = 0x1A;
+```
+
+---
+
+🔹 Floating-point Literals
+
+```java id="lit2"
+float f = 3.14f;
+double d = 3.14159;
+```
+
+---
+
+🔹 Character Literals
+
+```java id="lit3"
+char ch = 'A';
+char symbol = '@';
+```
+
+---
+
+🔹 String Literals
+
+```java id="lit4"
+String name = "Java";
+```
+
+---
+
+🔹 Boolean Literals
+
+```java id="lit5"
+boolean flag = true;
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚡ 3. Type Casting
+
+Type casting is **converting one data type into another**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Types of Type Casting
+
+---
+
+1️⃣ Implicit Casting (Widening)
+
+👉 Smaller type → larger type
+✔ Done automatically
+
+```java id="tc1"
+int a = 10;
+double b = a;  // int → double
+```
+
+---
+
+2️⃣ Explicit Casting (Narrowing)
+
+👉 Larger type → smaller type
+✔ Done manually
+
+```java id="tc2"
+double x = 10.5;
+int y = (int) x;  // double → int
+```
+
+---
+
+⚠️ Data Loss Example
+
+```java id="tc3"
+double num = 9.99;
+int value = (int) num;  // result = 9
+```
+
+👉 Decimal part is lost ❌
+
+---
+
+🎯 Why Type Casting Matters?
+
+✔ Required for operations
+✔ Helps in memory management
+✔ Used in real-world programs
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Mistakes
+
+❌ Wrong casting
+❌ Data loss ignored
+❌ Mixing incompatible types
+
+---
+
+🧠 Real Insight
+
+👉 Always choose correct data type and casting:
+
+* Avoid unnecessary conversions
+* Prevent runtime errors
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Variables store data
+✔ Literals are fixed values
+✔ Type casting converts data types
+✔ Two types: implicit & explicit
+
