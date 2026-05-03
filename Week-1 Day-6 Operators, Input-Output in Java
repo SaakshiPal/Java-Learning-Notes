@@ -1,0 +1,211 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 1 – Day 6 Operators & Input/Output in Java ☕
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+To perform operations and interact with users, you must understand:
+
+✔ Operators (perform calculations & logic)
+✔ Input/Output (take input & display output)
+
+👉 These are **essential for coding & interviews 🔥**
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚡ 1. Operators in Java
+
+Operators are symbols used to **perform operations on variables and values**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Types of Operators
+
+---
+
+🔹 1. Arithmetic Operators
+
+| Operator | Meaning        | Example |
+| -------- | -------------- | ------- |
+| +        | Addition       | a + b   |
+| -        | Subtraction    | a - b   |
+| *        | Multiplication | a * b   |
+| /        | Division       | a / b   |
+| %        | Modulus        | a % b   |
+
+---
+
+📌 Example
+
+```java id="op1"
+int a = 10, b = 3;
+System.out.println(a + b); // 13
+System.out.println(a % b); // 1
+```
+
+---
+
+🔹 2. Relational Operators
+
+| Operator | Meaning       |
+| -------- | ------------- |
+| ==       | Equal to      |
+| !=       | Not equal     |
+| >        | Greater than  |
+| <        | Less than     |
+| >=       | Greater equal |
+| <=       | Less equal    |
+
+---
+
+📌 Example
+
+```java id="op2"
+System.out.println(10 > 5);  // true
+System.out.println(10 == 5); // false
+```
+
+---
+
+🔹 3. Logical Operators
+
+| Operator | Meaning |
+| -------- | ------- |
+| &&       | AND     |
+| ||       | OR      |
+| !        | NOT     |
+
+---
+
+📌 Example
+
+```java id="op3"
+boolean x = true, y = false;
+System.out.println(x && y); // false
+System.out.println(x || y); // true
+```
+
+---
+
+🔹 4. Assignment Operators
+
+| Operator | Example |
+| -------- | ------- |
+| =        | a = 10  |
+| +=       | a += 5  |
+| -=       | a -= 5  |
+| *=       | a *= 2  |
+| /=       | a /= 2  |
+
+---
+
+🔹 5. Increment / Decrement
+
+| Operator | Meaning       |
+| -------- | ------------- |
+| ++       | Increase by 1 |
+| --       | Decrease by 1 |
+
+---
+
+📌 Example
+
+```java id="op4"
+int x = 5;
+x++;
+System.out.println(x); // 6
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+💻 2. Input in Java
+
+To take input from user, we use **Scanner class**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Import Scanner
+
+```java id="io1"
+import java.util.Scanner;
+```
+
+---
+
+📌 Example
+
+```java id="io2"
+import java.util.Scanner;
+
+class InputExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int age = sc.nextInt();
+        String name = sc.next();
+
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+```
+
+---
+
+🔍 Common Input Methods
+
+* `nextInt()` → integer
+* `nextDouble()` → decimal
+* `next()` → single word
+* `nextLine()` → full sentence
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🖥️ 3. Output in Java
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Print Methods
+
+```java id="io3"
+System.out.print("Hello");
+System.out.println("Java");
+System.out.printf("Age: %d", 20);
+```
+
+---
+
+🎯 Why This is Important?
+
+✔ Used in almost every program
+✔ Required for problem-solving
+✔ Core for competitive coding
+
+---
+
+⚠️ Common Mistakes
+
+❌ Forgetting to import Scanner
+❌ Mixing `nextLine()` with other inputs
+❌ Division by zero
+❌ Wrong operator usage
+
+---
+
+🧠 Real Insight
+
+👉 Practice operators + input/output:
+
+* Improves logic building
+* Helps in coding tests
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Operators perform operations
+✔ Types: arithmetic, relational, logical, assignment
+✔ Scanner is used for input
+✔ System.out is used for output
