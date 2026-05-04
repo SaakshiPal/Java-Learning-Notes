@@ -1,0 +1,202 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 5 – Day 7 Introduction to AI Prompts & Prompt Engineering ✍️🤖
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Large Language Models (LLMs) like GPT-4 work based on **prompts**.
+
+👉 The quality of output depends on how well you **design the prompt**.
+
+---
+
+🔹 What is a Prompt?
+
+```text id="prompt_def"
+A prompt is the input or instruction given to an AI model
+```
+
+---
+
+📌 Example
+
+```text id="prompt_ex"
+"Explain machine learning in simple terms"
+```
+
+---
+
+🎯 What is Prompt Engineering?
+
+```text id="prompt_eng_def"
+The process of designing and optimizing prompts to get better outputs from AI models
+```
+
+---
+
+🔥 Why Prompt Engineering is Important?
+
+✔ Improves response accuracy
+✔ Controls AI behavior
+✔ Reduces errors
+✔ Enables building AI applications
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 Types of Prompting
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1. Zero-Shot Prompting
+
+No examples given.
+
+```text id="zero_shot"
+Translate "Hello" to French
+```
+
+---
+
+🔹 2. Few-Shot Prompting
+
+Provide examples.
+
+```text id="few_shot"
+English: Hello → French: Bonjour  
+English: Thank you → French: Merci  
+English: Good morning →
+```
+
+---
+
+🔹 3. Instruction-Based Prompting
+
+Clear instructions.
+
+```text id="instruction_prompt"
+Summarize this text in 3 bullet points
+```
+
+---
+
+🔹 4. Role-Based Prompting
+
+Assign a role.
+
+```text id="role_prompt"
+You are a data scientist. Explain AI
+```
+
+---
+
+🔹 5. Chain-of-Thought Prompting
+
+Step-by-step reasoning.
+
+```text id="cot_prompt"
+Solve this problem step by step
+```
+
+---
+
+⚙️ Components of a Good Prompt
+
+✔ Clear instruction
+✔ Context
+✔ Examples (if needed)
+✔ Output format
+
+---
+
+📊 Example Comparison
+
+❌ Bad Prompt
+
+```text id="bad_prompt"
+Tell me about AI
+```
+
+---
+
+✅ Good Prompt
+
+```text id="good_prompt"
+Explain Artificial Intelligence in simple terms for beginners in 5 bullet points
+```
+
+---
+
+🔧 Prompt Design Tips
+
+✔ Be specific
+✔ Use simple language
+✔ Define output format
+✔ Add constraints (length, style)
+✔ Provide examples
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Advanced Prompting Concepts
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Temperature (Concept)
+
+* Low → More accurate
+* High → More creative
+
+---
+
+🔹 Prompt Chaining
+
+Break complex tasks into smaller steps.
+
+---
+
+🔹 System Prompts
+
+Control behavior of AI.
+
+```text id="system_prompt"
+You are a helpful assistant
+```
+
+---
+
+🚀 Real-World Applications
+
+✔ Chatbots
+✔ AI assistants
+✔ Content generation
+✔ Coding tools
+✔ RAG systems
+
+---
+
+⚠️ Common Mistakes
+
+❌ Vague prompts
+❌ Too long or unclear
+❌ No structure
+❌ No output format
+
+---
+
+🧠 Example (Real Use)
+
+```text id="real_prompt"
+You are an expert Python developer. Write a clean and optimized function to sort a list and explain it step by step.
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Prompt = input to AI model
+✔ Better prompts = better outputs
+✔ Different types of prompting exist
+✔ Prompt engineering is essential skill for LLMs
+✔ Used in all AI applications
+
