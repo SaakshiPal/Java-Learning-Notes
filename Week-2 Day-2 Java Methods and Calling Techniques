@@ -1,0 +1,219 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 2 – Day 2 Java Methods & Calling Techniques ☕
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Methods are used to **organize code into reusable blocks**.
+
+👉 They help in:
+
+✔ Reducing code duplication
+✔ Improving readability
+✔ Reusing logic
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1. What is a Method?
+
+A method is a **block of code that performs a specific task**.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="m1"
+returnType methodName(parameters) {
+    // method body
+}
+```
+
+---
+
+📌 Example
+
+```java id="m2"
+class Demo {
+
+    static void greet() {
+        System.out.println("Hello Java");
+    }
+
+    public static void main(String[] args) {
+        greet();
+    }
+}
+```
+
+---
+
+🔍 Explanation
+
+* `static` → Method belongs to class
+* `void` → No return value
+* `greet()` → Method name
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚡ 2. Types of Methods
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 🔹 Method Without Parameters
+
+```java id="m3"
+static void show() {
+    System.out.println("Welcome");
+}
+```
+
+---
+
+🔹 Method With Parameters
+
+```java id="m4"
+static void add(int a, int b) {
+    System.out.println(a + b);
+}
+```
+
+---
+
+🔹 Method With Return Type
+
+```java id="m5"
+static int square(int n) {
+    return n * n;
+}
+```
+
+---
+
+📌 Calling Methods
+
+```java id="m6"
+add(10, 20);
+
+int result = square(5);
+System.out.println(result);
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔁 3. Method Calling Techniques
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Static Method Calling
+
+👉 Called using class name or directly inside static method
+
+```java id="m7"
+class Test {
+    static void display() {
+        System.out.println("Static Method");
+    }
+
+    public static void main(String[] args) {
+        display();
+    }
+}
+```
+
+---
+
+🔹 Instance Method Calling
+
+👉 Requires object creation
+
+```java id="m8"
+class Test {
+
+    void show() {
+        System.out.println("Instance Method");
+    }
+
+    public static void main(String[] args) {
+        Test obj = new Test();
+        obj.show();
+    }
+}
+```
+
+---
+
+🔹 Call by Value
+
+Java uses **call by value**.
+
+👉 Copy of variable is passed to method.
+
+---
+
+📌 Example
+
+```java id="m9"
+class Demo {
+
+    static void change(int x) {
+        x = 50;
+    }
+
+    public static void main(String[] args) {
+        int a = 10;
+
+        change(a);
+
+        System.out.println(a);
+    }
+}
+```
+
+👉 Output:
+
+```text id="m10"
+10
+```
+
+✔ Original value remains unchanged.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Advantages of Methods
+
+✔ Code reusability
+✔ Better organization
+✔ Easier debugging
+✔ Modular programming
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Mistakes
+
+❌ Wrong return type
+❌ Missing method call
+❌ Parameter mismatch
+❌ Calling an instance method without an object
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Real Insight
+
+👉 Methods are heavily used in:
+
+* DSA problems
+* Real-world applications
+* Large software systems
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Methods are reusable code blocks
+✔ Methods can have parameters & return values
+✔ Static methods belong to class
+✔ Instance methods require objects
+✔ Java follows call by value
+
