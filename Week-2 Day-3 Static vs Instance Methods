@@ -1,0 +1,201 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 2 – Day 3 Static vs Instance Methods in Java ☕
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+In Java, methods are mainly of two types:
+
+✔ Static Methods
+✔ Instance Methods
+
+👉 Understanding their difference is **very important for interviews & OOP concepts 🔥**
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚡ 1. Static Methods
+
+A static method belongs to the **class**, not to objects.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Characteristics
+
+✔ Declared using `static` keyword
+✔ Can be called without object
+✔ Shared among all objects
+
+---
+
+📌 Example
+
+```java id="s1"
+class Demo {
+
+    static void display() {
+        System.out.println("Static Method");
+    }
+
+    public static void main(String[] args) {
+        display();
+    }
+}
+```
+
+---
+
+🔍 Important Points
+
+✔ Memory allocated once
+✔ Can access only static members directly
+✔ Faster because no object creation needed
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚡ 2. Instance Methods
+
+An instance method belongs to an **object**.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Characteristics
+
+✔ No `static` keyword
+✔ Requires object creation
+✔ Each object can use method
+
+---
+
+📌 Example
+
+```java id="s2"
+class Demo {
+
+    void show() {
+        System.out.println("Instance Method");
+    }
+
+    public static void main(String[] args) {
+        Demo obj = new Demo();
+        obj.show();
+    }
+}
+```
+
+---
+
+🔍 Important Points
+
+✔ Can access both static & instance members
+✔ Requires memory for objects
+
+---
+
+📊 Static vs Instance Methods
+
+| Feature              | Static Method | Instance Method |
+| -------------------- | ------------- | --------------- |
+| Belongs To           | Class         | Object          |
+| Object Required      | ❌ No          | ✔ Yes         |
+| Keyword              | `static`      | No keyword      |
+| Memory Allocation    | Once          | Per object      |
+| Access Instance Data | ❌ Directly No | ✔ Yes         |
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔁 Calling Techniques
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Static Method Calling
+
+```java id="s3"
+Demo.display();
+```
+
+OR
+
+```java id="s4"
+display();
+```
+
+---
+
+🔹 Instance Method Calling
+
+```java id="s5"
+Demo obj = new Demo();
+obj.show();
+```
+
+---
+
+⚠️ Common Mistakes
+
+❌ Calling instance method without object
+❌ Accessing non-static variables inside static method
+❌ Confusing class methods with object methods
+
+---
+
+📌 Example Error
+
+```java id="s6"
+class Test {
+
+    int x = 10;
+
+    static void show() {
+        System.out.println(x); // Error
+    }
+}
+```
+
+👉 Static methods cannot directly access instance variables ❌
+
+---
+
+🎯 When to Use What?
+
+🔹 Use Static Methods When:
+
+✔ Method logic is common for all objects
+✔ No object-specific data needed
+
+Examples:
+
+* `Math.sqrt()`
+* Utility methods
+
+---
+
+🔹 Use Instance Methods When:
+
+✔ Method depends on object data
+✔ Behavior changes for different objects
+
+Examples:
+
+* Bank account operations
+* Student details
+
+---
+
+🧠 Real Insight
+
+👉 Most utility/helper methods are static.
+
+👉 Real-world applications mainly use instance methods because they work with object data.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Static methods belong to class
+✔ Instance methods belong to objects
+✔ Static methods don’t require objects
+✔ Instance methods require object creation
+✔ Static methods cannot directly access instance data
+
