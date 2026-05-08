@@ -1,0 +1,225 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 2 – Day 4 Command Line Arguments & Varargs in Java ☕
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Java provides special features to:
+
+✔ Pass values while running programs
+✔ Handle variable number of arguments
+
+👉 These concepts are useful in **real-world applications & interviews 🔥**
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚡ 1. Command Line Arguments
+
+Command line arguments are values passed to the program during execution.
+
+---
+
+📌 Syntax
+
+```java id="c1"
+public static void main(String[] args)
+```
+
+👉 `args` stores command line inputs as strings.
+
+---
+
+📌 Example Program
+
+```java id="c2"
+class Demo {
+
+    public static void main(String[] args) {
+
+        System.out.println("First Argument: " + args[0]);
+        System.out.println("Second Argument: " + args[1]);
+    }
+}
+```
+
+---
+
+▶️ Compile & Run
+
+🔹 Compile
+
+```bash id="c3"
+javac Demo.java
+```
+
+---
+
+🔹 Run
+
+```bash id="c4"
+java Demo Java Programming
+```
+
+---
+
+📌 Output
+
+```text id="c5"
+First Argument: Java
+Second Argument: Programming
+```
+
+---
+
+🔍 Important Points
+
+✔ Arguments are stored as strings
+✔ Passed during execution
+✔ Accessed using array indexing
+
+---
+
+⚠️ Common Errors
+
+❌ Accessing invalid index
+❌ Forgetting arguments during execution
+
+---
+
+📌 Example Error
+
+```java id="c6"
+System.out.println(args[2]);
+```
+
+👉 Causes:
+
+```text id="c7"
+ArrayIndexOutOfBoundsException
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚡ 2. Varargs in Java
+
+Varargs allow methods to accept **variable number of arguments**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="v1"
+returnType methodName(dataType... variableName)
+```
+
+---
+
+📌 Example
+
+```java id="v2"
+class Demo {
+
+    static void add(int... numbers) {
+
+        int sum = 0;
+
+        for (int n : numbers) {
+            sum += n;
+        }
+
+        System.out.println("Sum = " + sum);
+    }
+
+    public static void main(String[] args) {
+
+        add(10, 20);
+        add(1, 2, 3, 4);
+        add(5);
+    }
+}
+```
+
+---
+
+📌 Output
+
+```text id="v3"
+Sum = 30
+Sum = 10
+Sum = 5
+```
+
+---
+
+🔍 How Varargs Work?
+
+👉 Internally treated as arrays.
+
+---
+
+📌 Equivalent Form
+
+```java id="v4"
+static void add(int[] numbers)
+```
+
+---
+
+⚠️ Rules of Varargs
+
+✔ Only one varargs parameter allowed
+✔ Must be last parameter in method
+
+---
+
+📌 Valid Example
+
+```java id="v5"
+static void display(String name, int... marks)
+```
+
+---
+
+❌ Invalid Example
+
+```java id="v6"
+static void test(int... x, String name)
+```
+
+---
+
+🎯 Advantages of Varargs
+
+✔ Flexible method calling
+✔ Cleaner code
+✔ No need for multiple overloaded methods
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Mistakes
+
+❌ Multiple varargs in one method
+❌ Varargs not placed last
+❌ Confusing arrays with varargs
+
+---
+
+🧠 Real Insight
+
+👉 Varargs are commonly used in:
+
+* Utility methods
+* Logging systems
+* Framework APIs
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Command line arguments pass values during execution
+✔ Arguments are stored in `String[] args`
+✔ Varargs allow variable number of inputs
+✔ Varargs improve flexibility & readability
+
