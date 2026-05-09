@@ -1,0 +1,194 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 2 – Day 5 Arrays & Multi-Dimensional Arrays in Java ☕
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Arrays are used to store **multiple values of the same data type** in a single variable.
+
+👉 They are fundamental for:
+
+✔ Data storage
+✔ Problem solving
+✔ DSA preparation
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔢 1. What is an Array?
+
+An array is a fixed-size collection of similar elements.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="a1"
+dataType[] arrayName;
+```
+
+---
+
+📌 Declaration and Initialization
+
+```java id="a2"
+int[] numbers = {10, 20, 30, 40, 50};
+```
+
+---
+
+📌 Accessing Elements
+
+```java id="a3"
+System.out.println(numbers[0]); // 10
+System.out.println(numbers[2]); // 30
+```
+
+---
+
+🔍 Array Indexing
+
+* First index = `0`
+* Last index = `length - 1`
+
+---
+
+🔁 Traversing an Array
+
+🔹 Using for Loop
+
+```java id="a4"
+for (int i = 0; i < numbers.length; i++) {
+    System.out.println(numbers[i]);
+}
+```
+
+---
+
+🔹 Using Enhanced for Loop
+
+```java id="a5"
+for (int num : numbers) {
+    System.out.println(num);
+}
+```
+
+---
+
+📏 Array Properties
+
+```java id="a6"
+System.out.println(numbers.length);
+```
+
+---
+
+⚠️ Common Error
+
+```java id="a7"
+System.out.println(numbers[10]);
+```
+
+👉 Causes:
+
+```text id="a8"
+ArrayIndexOutOfBoundsException
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧮 2. Multi-Dimensional Arrays
+
+A multi-dimensional array is an array of arrays.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 2D Array Syntax
+
+```java id="m1"
+dataType[][] arrayName;
+```
+
+---
+
+📌 Initialization
+
+```java id="m2"
+int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+```
+
+---
+
+📌 Accessing Elements
+
+```java id="m3"
+System.out.println(matrix[1][2]); // 6
+```
+
+---
+
+🔁 Traversing 2D Array
+
+```java id="m4"
+for (int i = 0; i < matrix.length; i++) {
+    for (int j = 0; j < matrix[i].length; j++) {
+        System.out.print(matrix[i][j] + " ");
+    }
+    System.out.println();
+}
+```
+
+---
+
+📌 Jagged Arrays
+
+Rows can have different lengths.
+
+```java id="m5"
+int[][] jagged = {
+    {1, 2},
+    {3, 4, 5},
+    {6}
+};
+```
+
+---
+
+🎯 Advantages of Arrays
+
+✔ Store multiple values efficiently
+✔ Easy to process with loops
+✔ Foundation for many data structures
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Limitations of Arrays
+
+❌ Fixed size
+❌ Same data type only
+❌ Insertions/deletions are costly
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Real-World Uses
+
+* Student marks
+* Temperature records
+* Game boards
+* Matrices
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Arrays store same-type elements
+✔ Index starts at 0
+✔ Use `.length` to get size
+✔ 2D arrays represent tables/matrices
+✔ Jagged arrays allow variable row sizes
+
