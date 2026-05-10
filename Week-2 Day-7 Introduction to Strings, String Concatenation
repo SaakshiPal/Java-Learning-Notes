@@ -1,0 +1,202 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 2 – Day 7 Introduction to Strings & String Concatenation ☕
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Strings are used to store and manipulate **text data** in Java.
+
+👉 Examples:
+
+* Names
+* Messages
+* Sentences
+* Passwords
+
+Strings are one of the most frequently used concepts in Java and coding interviews.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔤 1. What is a String?
+
+A `String` is a sequence of characters enclosed in double quotes.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Examples
+
+```java id="s1"
+String name = "Saakshi";
+String city = "Ahmedabad";
+String message = "Hello, Java!";
+```
+
+---
+
+🔍 Important Note
+
+`String` is a **class** in Java, not a primitive data type.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧱 2. Creating Strings
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Using String Literal
+
+```java id="s2"
+String language = "Java";
+```
+
+---
+
+🔹 Using new Keyword
+
+```java id="s3"
+String language = new String("Java");
+```
+
+---
+
+📌 Difference
+
+* String literal uses String Pool (memory efficient)
+* `new String()` creates a new object
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📏 3. Common String Methods
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 length()
+
+```java id="s4"
+String str = "Java";
+System.out.println(str.length());   // 4
+```
+
+---
+
+🔹 charAt()
+
+```java id="s5"
+System.out.println(str.charAt(0));  // J
+```
+
+---
+
+🔹 toUpperCase()
+
+```java id="s6"
+System.out.println(str.toUpperCase()); // JAVA
+```
+
+---
+
+🔹 toLowerCase()
+
+```java id="s7"
+System.out.println(str.toLowerCase()); // java
+```
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+➕ 4. String Concatenation
+
+Concatenation means joining two or more strings.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Using `+` Operator
+
+```java id="s8"
+String first = "Hello";
+String second = "World";
+
+String result = first + " " + second;
+System.out.println(result);
+```
+
+Output:
+
+```text id="s9"
+Hello World
+```
+
+---
+
+🔹 Using `concat()`
+
+```java id="s10"
+String a = "Java";
+String b = " Programming";
+
+System.out.println(a.concat(b));
+```
+
+Output:
+
+```text id="s11"
+Java Programming
+```
+
+---
+
+🔢 Concatenating Strings with Numbers
+
+```java id="s12"
+int age = 21;
+String text = "Age: " + age;
+
+System.out.println(text);
+```
+
+Output:
+
+```text id="s13"
+Age: 21
+```
+
+---
+
+🧠 String Immutability
+
+Strings are immutable, meaning they cannot be changed after creation.
+
+```java id="s14"
+String str = "Java";
+str = str + " Programming";
+```
+
+A new String object is created.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Why Strings Matter?
+
+✔ Used in almost every application
+✔ Essential for user input and output
+✔ Frequently asked in interviews
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Mistakes
+
+❌ Using single quotes for strings
+❌ Accessing invalid index with `charAt()`
+❌ Confusing `String` with primitive types
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ String stores text data
+✔ `String` is a class
+✔ Strings are immutable
+✔ Use `+` or `concat()` for concatenation
+✔ Many built-in methods are available
+
