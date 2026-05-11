@@ -1,0 +1,200 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 3 – Day 1 String Class & Methods in Java ☕
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+The `String` class provides many built-in methods to manipulate text.
+
+👉 These methods are widely used in:
+
+* Input processing
+* Validation
+* Data formatting
+* Coding interviews
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔤 1. Common String Methods
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 length()
+
+Returns the number of characters.
+
+```java id="m1"
+String str = "Java";
+System.out.println(str.length());   // 4
+```
+
+---
+
+🔹 charAt()
+
+Returns character at a specific index.
+
+```java id="m2"
+System.out.println(str.charAt(2));  // v
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 substring()
+
+Extracts part of a string.
+
+```java id="m3"
+String text = "Programming";
+
+System.out.println(text.substring(3));    // gramming
+System.out.println(text.substring(0, 4)); // Prog
+```
+
+---
+
+🔹 equals()
+
+Compares string contents.
+
+```java id="m4"
+String a = "Java";
+String b = "Java";
+
+System.out.println(a.equals(b));   // true
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 equalsIgnoreCase()
+
+Ignores uppercase/lowercase.
+
+```java id="m5"
+System.out.println("JAVA".equalsIgnoreCase("java")); // true
+```
+
+---
+
+🔹 compareTo()
+
+Lexicographically compares strings.
+
+```java id="m6"
+System.out.println("Apple".compareTo("Banana")); // negative value
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 contains()
+
+Checks if substring exists.
+
+```java id="m7"
+System.out.println("Hello Java".contains("Java")); // true
+```
+
+---
+
+🔹 startsWith() and endsWith()
+
+```java id="m8"
+System.out.println("Java Programming".startsWith("Java")); // true
+System.out.println("file.txt".endsWith(".txt"));          // true
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 indexOf()
+
+Returns first occurrence index.
+
+```java id="m9"
+System.out.println("banana".indexOf('a')); // 1
+```
+
+---
+
+🔹 replace()
+
+Replaces characters or text.
+
+```java id="m10"
+System.out.println("Java".replace('J', 'L')); // Lava
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 trim()
+
+Removes leading and trailing spaces.
+
+```java id="m11"
+System.out.println("  Hello  ".trim()); // Hello
+```
+
+---
+
+🔹 toUpperCase() / toLowerCase()
+
+```java id="m12"
+System.out.println("java".toUpperCase()); // JAVA
+System.out.println("JAVA".toLowerCase()); // java
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 split()
+
+Splits string into array.
+
+```java id="m13"
+String sentence = "Java is fun";
+String[] words = sentence.split(" ");
+```
+
+---
+
+📌 Complete Example
+
+```java id="m14"
+class StringMethodsDemo {
+    public static void main(String[] args) {
+        String str = "Java Programming";
+
+        System.out.println(str.length());
+        System.out.println(str.substring(5));
+        System.out.println(str.contains("Java"));
+        System.out.println(str.toUpperCase());
+    }
+}
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Why String Methods Matter?
+
+✔ Simplify text processing
+✔ Used in form validation
+✔ Essential in coding problems
+
+---
+
+⚠️ Common Mistakes
+
+❌ Using `==` instead of `equals()`
+❌ Invalid indexes in `substring()`
+❌ Forgetting strings are immutable
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ `String` provides many built-in methods
+✔ Use `equals()` to compare contents
+✔ `substring()` extracts text
+✔ `split()` converts string to array
+✔ Strings are immutable
+
