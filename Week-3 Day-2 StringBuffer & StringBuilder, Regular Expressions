@@ -1,0 +1,209 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 3 – Day 2 StringBuffer, StringBuilder & Regular Expressions ☕
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+When working with text in Java, you often need to:
+
+✔ Modify strings efficiently
+✔ Validate patterns such as emails, phone numbers, and passwords
+
+Java provides:
+
+* `StringBuffer`
+* `StringBuilder`
+* Regular Expressions (Regex)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 1. Why Not Modify String Directly?
+
+Strings are immutable.
+
+```java id="intro1"
+String str = "Java";
+str = str + " Programming";
+```
+
+👉 A new object is created each time.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚡ 2. StringBuffer
+
+`StringBuffer` is a mutable sequence of characters.
+
+✔ Can modify text without creating new objects
+✔ Thread-safe (synchronized)
+
+---
+
+📌 Example
+
+```java id="sb1"
+StringBuffer sb = new StringBuffer("Java");
+sb.append(" Programming");
+System.out.println(sb);
+```
+
+Output:
+
+```text id="sb2"
+Java Programming
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 3. StringBuilder
+
+`StringBuilder` is similar to `StringBuffer`, but faster.
+
+✔ Mutable
+✔ Not thread-safe
+✔ Better performance in single-threaded applications
+
+---
+
+📌 Example
+
+```java id="sb3"
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");
+System.out.println(sb);
+```
+
+---
+
+📊 String vs StringBuffer vs StringBuilder
+
+| Feature     | String | StringBuffer | StringBuilder |
+| ----------- | ------ | ------------ | ------------- |
+| Mutable     | ❌ No   | ✔ Yes        | ✔ Yes         |
+| Thread-safe | ✔ Yes  | ✔ Yes        | ❌ No          |
+| Performance | Slow   | Medium       | Fast          |
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🛠️ Common Methods
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 append()
+
+```java id="m1"
+sb.append(" Java");
+```
+
+🔹 insert()
+
+```java id="m2"
+sb.insert(5, "Awesome ");
+```
+
+🔹 delete()
+
+```java id="m3"
+sb.delete(0, 5);
+```
+
+🔹 reverse()
+
+```java id="m4"
+sb.reverse();
+```
+
+🔹 toString()
+
+```java id="m5"
+String result = sb.toString();
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔍 4. Regular Expressions (Regex)
+
+Regex is used to define search and validation patterns.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Import
+
+```java id="r1"
+import java.util.regex.*;
+```
+
+---
+
+📌 Common Regex Symbols
+
+| Symbol | Meaning         |
+| ------ | --------------- |
+| `.`    | Any character   |
+| `*`    | Zero or more    |
+| `+`    | One or more     |
+| `?`    | Zero or one     |
+| `\\d`  | Digit           |
+| `\\w`  | Word character  |
+| `\\s`  | Whitespace      |
+| `^`    | Start of string |
+| `$`    | End of string   |
+
+---
+
+📌 Simple Validation
+
+```java id="r2"
+String email = "test@example.com";
+boolean valid = email.matches("^[A-Za-z0-9+_.-]+@(.+)$");
+
+System.out.println(valid);
+```
+
+---
+
+📌 Find Pattern
+
+```java id="r3"
+Pattern pattern = Pattern.compile("\\d+");
+Matcher matcher = pattern.matcher("Order123");
+
+while (matcher.find()) {
+    System.out.println(matcher.group());
+}
+```
+
+Output:
+
+```text id="r4"
+123
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Real-World Uses of Regex
+
+* Email validation
+* Password checking
+* Extracting numbers
+* Log analysis
+
+---
+
+⚠️ Common Mistakes
+
+❌ Forgetting to escape backslashes (`\\d`)
+❌ Using `String` for repeated modifications
+❌ Choosing `StringBuffer` when `StringBuilder` is enough
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ `StringBuffer` is mutable and thread-safe
+✔ `StringBuilder` is mutable and faster
+✔ Regex validates and searches text patterns
+✔ `matches()` checks complete string patterns
+
