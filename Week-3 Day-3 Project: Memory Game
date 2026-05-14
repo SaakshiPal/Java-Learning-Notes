@@ -1,0 +1,180 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 3 – Day 3 Project: Memory Game in Java 🎮
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+In this project, you will build a **console-based Memory Matching Game**.
+
+👉 The player flips two positions at a time and tries to match pairs of symbols.
+
+This project helps you practice:
+
+✔ Arrays
+✔ Strings
+✔ Loops
+✔ Methods
+✔ Conditional Statements
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Objective
+
+Create a game where:
+
+* A hidden board contains pairs of symbols
+* The player selects two positions
+* Matching symbols remain visible
+* Non-matching symbols are hidden again
+* Game ends when all pairs are matched
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 Concepts Used
+
+✔ Arrays
+✔ Methods
+✔ Input validation
+✔ Game logic
+
+---
+
+📊 Sample Board
+
+```text id="board1"
+1  2  3  4
+5  6  7  8
+```
+
+Hidden values may be:
+
+```text id="board2"
+A B C D A B C D
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+💻 Complete Java Code
+
+```java id="game1"
+import java.util.Scanner;
+
+public class MemoryGame {
+
+    static String[] values = {"A", "B", "C", "D", "A", "B", "C", "D"};
+    static boolean[] matched = new boolean[8];
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int pairsFound = 0;
+
+        while (pairsFound < 4) {
+            printBoard();
+
+            System.out.print("Enter first position (1-8): ");
+            int first = sc.nextInt() - 1;
+
+            System.out.print("Enter second position (1-8): ");
+            int second = sc.nextInt() - 1;
+
+            if (!isValid(first, second)) {
+                System.out.println("Invalid selection. Try again.");
+                continue;
+            }
+
+            System.out.println("First: " + values[first]);
+            System.out.println("Second: " + values[second]);
+
+            if (values[first].equals(values[second])) {
+                System.out.println("✅ Match Found!");
+                matched[first] = true;
+                matched[second] = true;
+                pairsFound++;
+            } else {
+                System.out.println("❌ Not a Match.");
+            }
+        }
+
+        System.out.println("🎉 Congratulations! You matched all pairs.");
+        sc.close();
+    }
+
+    static void printBoard() {
+        System.out.println("\nBoard:");
+        for (int i = 0; i < values.length; i++) {
+            if (matched[i]) {
+                System.out.print(values[i] + " ");
+            } else {
+                System.out.print((i + 1) + " ");
+            }
+
+            if (i == 3) {
+                System.out.println();
+            }
+        }
+        System.out.println();
+    }
+
+    static boolean isValid(int first, int second) {
+        if (first < 0 || first >= 8) return false;
+        if (second < 0 || second >= 8) return false;
+        if (first == second) return false;
+        if (matched[first] || matched[second]) return false;
+        return true;
+    }
+}
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+▶️ How to Run
+
+1️⃣ Save file as `MemoryGame.java`
+2️⃣ Compile:
+
+```bash id="run1"
+javac MemoryGame.java
+```
+
+3️⃣ Run:
+
+```bash id="run2"
+java MemoryGame
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Features of This Project
+
+✔ Interactive gameplay
+✔ Input validation
+✔ Match detection
+✔ Win condition
+
+---
+
+🚀 Possible Improvements
+
+* Shuffle symbols randomly
+* Count attempts
+* Add timer
+* Create GUI using Swing
+
+---
+
+🧠 Learning Outcome
+
+✔ Strengthens array and method concepts
+✔ Builds game logic skills
+✔ Improves problem-solving ability
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Arrays can store game data
+✔ Methods organize code cleanly
+✔ Conditions control gameplay
+
