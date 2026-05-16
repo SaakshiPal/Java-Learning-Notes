@@ -1,0 +1,185 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 3 – Day 4 OOP Concepts & Class/Object Creation in Java ☕
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Java is an **Object-Oriented Programming (OOP)** language.
+
+OOP helps in:
+
+✔ Organizing code into reusable components
+✔ Improving maintainability
+✔ Modeling real-world entities
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1. What is OOP?
+
+Object-Oriented Programming is a programming approach based on:
+
+* Classes
+* Objects
+* Encapsulation
+* Inheritance
+* Polymorphism
+* Abstraction
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🏗️ 2. What is a Class?
+
+A class is a **blueprint** for creating objects.
+
+It defines:
+
+* Data (fields/variables)
+* Behavior (methods)
+
+---
+
+📌 Example Class
+
+```java id="c1"
+class Student {
+    String name;
+    int age;
+
+    void display() {
+        System.out.println(name + " " + age);
+    }
+}
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 3. What is an Object?
+
+An object is a **real instance of a class**.
+
+Each object has:
+
+* State (data)
+* Behavior (methods)
+
+---
+
+📌 Creating Objects
+
+```java id="c2"
+Student s1 = new Student();
+Student s2 = new Student();
+```
+
+---
+
+📝 Assigning Values
+
+```java id="c3"
+s1.name = "Saakshi";
+s1.age = 21;
+```
+
+---
+
+▶️ Calling Methods
+
+```java id="c4"
+s1.display();
+```
+
+---
+
+💻 Complete Example
+
+```java id="c5"
+class Student {
+    String name;
+    int age;
+
+    void display() {
+        System.out.println(name + " - " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.name = "Saakshi";
+        s1.age = 21;
+
+        Student s2 = new Student();
+        s2.name = "Rahul";
+        s2.age = 22;
+
+        s1.display();
+        s2.display();
+    }
+}
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🌟 Four Pillars of OOP
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔒 Encapsulation
+
+Wrapping data and methods into one unit (class).
+
+---
+
+🧬 Inheritance
+
+One class acquires properties of another.
+
+---
+
+🔁 Polymorphism
+
+Same method behaves differently.
+
+---
+
+🎭 Abstraction
+
+Showing only essential details.
+
+---
+
+🎯 Advantages of OOP
+
+✔ Code reusability
+✔ Better security
+✔ Easy maintenance
+✔ Real-world modeling
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Mistakes
+
+❌ Forgetting the `new` keyword
+❌ Accessing uninitialized fields
+❌ Confusing class and object
+
+---
+
+🧠 Real-World Examples
+
+* Student object
+* BankAccount object
+* Car object
+* Employee object
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Class is a blueprint
+✔ Object is an instance of a class
+✔ OOP improves code organization
+✔ Java is fully object-oriented (except primitive types)
+
