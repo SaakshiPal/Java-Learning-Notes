@@ -1,0 +1,173 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 3 – Day 5 Constructors & Inheritance in Java ☕
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+In Java:
+
+✔ Constructors initialize objects
+✔ Inheritance allows one class to reuse another class’s properties and methods
+
+👉 These are core OOP concepts and are frequently asked in interviews.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🏗️ 1. Constructors
+
+A constructor is a special method that is automatically called when an object is created.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Characteristics
+
+✔ Constructor name must be the same as class name
+✔ No return type (not even `void`)
+✔ Executes automatically when using `new`
+
+---
+
+📌 Default Constructor
+
+```java id="c1"
+class Student {
+    Student() {
+        System.out.println("Constructor called");
+    }
+}
+```
+
+---
+
+📌 Parameterized Constructor
+
+```java id="c2"
+class Student {
+    String name;
+
+    Student(String n) {
+        name = n;
+    }
+}
+```
+
+---
+
+💻 Complete Example
+
+```java id="c3"
+class Student {
+    String name;
+    int age;
+
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void display() {
+        System.out.println(name + " " + age);
+    }
+}
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧬 2. Inheritance
+
+Inheritance allows one class to acquire fields and methods of another class.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="i1"
+class Child extends Parent {
+}
+```
+
+---
+
+📌 Example
+
+```java id="i2"
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+```
+
+---
+
+▶️ Using Inherited Methods
+
+```java id="i3"
+Dog d = new Dog();
+d.sound();
+d.bark();
+```
+
+---
+
+📊 Types of Inheritance in Java
+
+* Single Inheritance ✔
+* Multilevel Inheritance ✔
+* Hierarchical Inheritance ✔
+* Multiple Inheritance ❌ (not with classes)
+
+---
+
+🔹 super Keyword
+
+Used to refer to parent class members.
+
+```java id="i4"
+super();
+super.variable;
+super.method();
+```
+
+---
+
+🎯 Advantages of Inheritance
+
+✔ Code reuse
+✔ Reduced duplication
+✔ Easier maintenance
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Mistakes
+
+❌ Constructor name different from class name
+❌ Using constructor like a normal method
+❌ Forgetting `extends` keyword
+
+---
+
+🧠 Real-World Example
+
+* `Vehicle` → Parent class
+* `Car` → Child class
+* `Bike` → Child class
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Constructors initialize objects
+✔ Constructors can be default or parameterized
+✔ Inheritance enables code reuse
+✔ Child classes inherit parent methods and fields
+✔ `super` accesses parent class members
+
