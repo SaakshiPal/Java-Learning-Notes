@@ -1,0 +1,165 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 3 – Day 6 Polymorphism, Abstraction & Encapsulation in Java ☕
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+These are three major pillars of Object-Oriented Programming (OOP):
+
+✔ Polymorphism
+✔ Abstraction
+✔ Encapsulation
+
+👉 They help create flexible, secure, and maintainable software.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔁 1. Polymorphism
+
+Polymorphism means **one name, many forms**.
+
+The same method can behave differently depending on context.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Types of Polymorphism
+
+1️⃣ Compile-time Polymorphism (Method Overloading)
+2️⃣ Runtime Polymorphism (Method Overriding)
+
+---
+
+📌 Method Overloading
+
+```java id="p1"
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+```
+
+---
+
+📌 Method Overriding
+
+```java id="p2"
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎭 2. Abstraction
+
+Abstraction means **hiding implementation details and showing only essential features**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Abstract Class Example
+
+```java id="a1"
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing Circle");
+    }
+}
+```
+
+---
+
+🔹 Interface Example
+
+```java id="a2"
+interface Animal {
+    void sound();
+}
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔒 3. Encapsulation
+
+Encapsulation means **wrapping data and methods together and restricting direct access**.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Example
+
+```java id="e1"
+class Employee {
+    private double salary;
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+}
+```
+
+---
+
+🎯 Benefits of Encapsulation
+
+✔ Data security
+✔ Controlled access
+✔ Better maintainability
+
+---
+
+📊 Comparison
+
+| Concept       | Purpose                           |
+| ------------- | --------------------------------- |
+| Polymorphism  | Same method, different behavior   |
+| Abstraction   | Hide implementation details       |
+| Encapsulation | Protect data using access control |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Real-World Examples
+
+* ATM machine → Abstraction
+* Different payment methods → Polymorphism
+* Bank account with private balance → Encapsulation
+
+---
+
+⚠️ Common Mistakes
+
+❌ Forgetting `@Override`
+❌ Accessing private variables directly
+❌ Not implementing abstract methods
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Polymorphism enables flexible behavior
+✔ Abstraction hides complexity
+✔ Encapsulation secures data
+✔ These are core OOP principles
+
