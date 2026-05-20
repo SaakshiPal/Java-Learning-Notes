@@ -1,0 +1,198 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 3 – Day 7 Inner Classes & Access Modifiers in Java ☕
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Java provides:
+
+✔ Access Modifiers to control visibility
+✔ Inner Classes to organize related classes together
+
+👉 These concepts improve code security and structure.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔐 1. Access Modifiers
+
+Access modifiers define where a class, variable, or method can be accessed.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Types of Access Modifiers
+
+| Modifier    | Same Class | Same Package | Subclass | Other Packages      |
+| ----------- | ---------- | ------------ | -------- | ------------------- |
+| `private`   | ✔          | ❌            | ❌        | ❌                   |
+| Default     | ✔          | ✔            | ❌        | ❌                   |
+| `protected` | ✔          | ✔            | ✔        | ✔ (via inheritance) |
+| `public`    | ✔          | ✔            | ✔        | ✔                   |
+
+---
+
+🔒 private
+
+Accessible only within the same class.
+
+```java id="am1"
+class Demo {
+    private int value = 10;
+}
+```
+
+---
+
+📦 Default (Package-Private)
+
+No modifier specified.
+
+```java id="am2"
+class Demo {
+    int count = 5;
+}
+```
+
+---
+
+🛡️ protected
+
+Accessible in same package and subclasses.
+
+```java id="am3"
+class Parent {
+    protected int age = 20;
+}
+```
+
+---
+
+🌍 public
+
+Accessible from anywhere.
+
+```java id="am4"
+public class Test {
+    public int data = 100;
+}
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 2. Inner Classes
+
+An inner class is a class defined inside another class.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Why Use Inner Classes?
+
+✔ Logical grouping
+✔ Better encapsulation
+✔ Easier access to outer class members
+
+---
+
+🔹 Member Inner Class
+
+```java id="ic1"
+class Outer {
+    int x = 10;
+
+    class Inner {
+        void show() {
+            System.out.println(x);
+        }
+    }
+}
+```
+
+---
+
+▶️ Creating Inner Class Object
+
+```java id="ic2"
+Outer outer = new Outer();
+Outer.Inner inner = outer.new Inner();
+inner.show();
+```
+
+---
+
+🔹 Static Nested Class
+
+```java id="ic3"
+class Outer {
+    static class Nested {
+        void display() {
+            System.out.println("Static Nested Class");
+        }
+    }
+}
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+▶️ Creating Static Nested Object
+
+```java id="ic4"
+Outer.Nested obj = new Outer.Nested();
+obj.display();
+```
+
+---
+
+🔹 Local Inner Class
+
+Defined inside a method.
+
+```java id="ic5"
+void method() {
+    class Local {
+        void show() {
+            System.out.println("Local Inner Class");
+        }
+    }
+}
+```
+
+---
+
+🔹 Anonymous Inner Class
+
+Class without a name.
+
+```java id="ic6"
+Runnable r = new Runnable() {
+    public void run() {
+        System.out.println("Running");
+    }
+};
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Advantages of Inner Classes
+
+✔ Better code organization
+✔ Improved encapsulation
+✔ Access to outer class members
+
+---
+
+⚠️ Common Mistakes
+
+❌ Incorrect syntax for creating inner objects
+❌ Confusing static nested class with member inner class
+❌ Using private members outside class
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Access modifiers control visibility
+✔ `private`, default, `protected`, `public`
+✔ Inner classes are classes inside another class
+✔ Types: member, static nested, local, anonymous
+
