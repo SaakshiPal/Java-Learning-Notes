@@ -1,0 +1,239 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 4 – Day 1 Final Keyword & Object Class in Java ☕
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Java provides:
+
+✔ `final` keyword to restrict modifications
+✔ `Object` class as the root class of all Java classes
+
+👉 These concepts are important for writing secure and reusable programs.
+
+---
+
+🔒 1. final Keyword
+
+The `final` keyword is used to make:
+
+* Variables constant
+* Methods non-overridable
+* Classes non-inheritable
+
+---
+
+🔹 final Variable
+
+A final variable cannot be changed after initialization.
+
+```java id="f1"
+class Demo {
+    final int MAX = 100;
+
+    void show() {
+        System.out.println(MAX);
+    }
+}
+```
+
+---
+
+❌ Invalid Modification
+
+```java id="f2"
+MAX = 200;
+```
+
+👉 Causes compilation error.
+
+---
+
+🔹 final Method
+
+A final method cannot be overridden.
+
+```java id="f3"
+class Parent {
+    final void display() {
+        System.out.println("Final Method");
+    }
+}
+```
+
+---
+
+❌ Invalid Override
+
+```java id="f4"
+class Child extends Parent {
+    void display() {
+        System.out.println("Override");
+    }
+}
+```
+
+---
+
+🔹 final Class
+
+A final class cannot be inherited.
+
+```java id="f5"
+final class Vehicle {
+}
+```
+
+---
+
+❌ Invalid Inheritance
+
+```java id="f6"
+class Car extends Vehicle {
+}
+```
+
+---
+
+🎯 Uses of final Keyword
+
+✔ Create constants
+✔ Prevent method overriding
+✔ Improve security and immutability
+
+---
+
+🌍 2. Object Class
+
+`Object` is the parent class of all Java classes.
+
+```text id="o1"
+Every class in Java implicitly extends Object class
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Common Methods of Object Class
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 toString()
+
+Returns string representation of object.
+
+```java id="o2"
+class Student {
+    int id = 101;
+
+    public String toString() {
+        return "Student ID: " + id;
+    }
+}
+```
+
+---
+
+🔹 equals()
+
+Compares objects.
+
+```java id="o3"
+String a = "Java";
+String b = "Java";
+
+System.out.println(a.equals(b));
+```
+
+---
+
+🔹 hashCode()
+
+Returns hash value of object.
+
+```java id="o4"
+System.out.println(a.hashCode());
+```
+
+---
+
+🔹 getClass()
+
+Returns runtime class information.
+
+```java id="o5"
+System.out.println(a.getClass());
+```
+
+---
+
+🔹 clone()
+
+Creates copy of object.
+
+```java id="o6"
+Object copy = obj.clone();
+```
+
+---
+
+💻 Complete Example
+
+```java id="o7"
+class Student {
+    int id;
+
+    Student(int id) {
+        this.id = id;
+    }
+
+    public String toString() {
+        return "Student ID: " + id;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student(101);
+
+        System.out.println(s);
+        System.out.println(s.getClass());
+    }
+}
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Mistakes
+
+❌ Trying to modify final variables
+❌ Overriding final methods
+❌ Using `==` instead of `equals()` for objects
+
+---
+
+🧠 Real Insight
+
+👉 `final` is widely used in:
+
+* Constants
+* Immutable classes
+* Secure APIs
+
+👉 Object class methods are used in:
+
+* Collections
+* Debugging
+* Frameworks
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ `final` restricts modification
+✔ final variable → constant
+✔ final method → cannot override
+✔ final class → cannot inherit
+✔ Object class is parent of all classes
+
