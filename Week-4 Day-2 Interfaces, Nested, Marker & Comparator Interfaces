@@ -1,0 +1,248 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 4 – Day 2 Interfaces, Nested, Marker & Comparator Interfaces ☕
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Interfaces are used in Java to achieve:
+
+✔ Abstraction
+✔ Multiple inheritance
+✔ Loose coupling
+
+Java also provides special interfaces like:
+
+* Nested Interfaces
+* Marker Interfaces
+* Comparator Interface
+
+👉 These are important for OOP and interview preparation.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1. What is an Interface?
+
+An interface is a blueprint that contains abstract methods.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="i1"
+interface Animal {
+    void sound();
+}
+```
+
+---
+
+📌 Implementing Interface
+
+```java id="i2"
+class Dog implements Animal {
+
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+```
+
+---
+
+▶️ Using Interface
+
+```java id="i3"
+Dog d = new Dog();
+d.sound();
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Features of Interfaces
+
+✔ Supports abstraction
+✔ Allows multiple inheritance
+✔ Methods are public & abstract by default
+✔ Variables are public, static & final
+
+---
+
+📌 Multiple Inheritance Example
+
+```java id="i4"
+interface A {
+    void show();
+}
+
+interface B {
+    void display();
+}
+
+class Test implements A, B {
+
+    public void show() {
+        System.out.println("Show");
+    }
+
+    public void display() {
+        System.out.println("Display");
+    }
+}
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 2. Nested Interface
+
+An interface declared inside another interface or class.
+
+---
+
+📌 Example
+
+```java id="n1"
+class Outer {
+
+    interface Inner {
+        void message();
+    }
+}
+```
+
+---
+
+▶️ Implementing Nested Interface
+
+```java id="n2"
+class Demo implements Outer.Inner {
+
+    public void message() {
+        System.out.println("Nested Interface");
+    }
+}
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🏷️ 3. Marker Interface
+
+A marker interface contains no methods or fields.
+
+👉 Used to provide special information to JVM/compiler.
+
+---
+
+📌 Example
+
+```java id="m1"
+interface Serializable {
+}
+```
+
+---
+
+🔍 Common Marker Interfaces
+
+* `Serializable`
+* `Cloneable`
+* `Remote`
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚖️ 4. Comparator Interface
+
+Used to define custom sorting logic.
+
+Located in:
+
+```java id="c1"
+import java.util.Comparator;
+```
+
+---
+
+📌 Example
+
+```java id="c2"
+import java.util.*;
+
+class Student {
+    int age;
+    String name;
+
+    Student(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+}
+
+class AgeComparator implements Comparator<Student> {
+
+    public int compare(Student s1, Student s2) {
+        return s1.age - s2.age;
+    }
+}
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+▶️ Sorting Example
+
+```java id="c3"
+Collections.sort(list, new AgeComparator());
+```
+
+---
+
+🎯 Why Comparator?
+
+✔ Custom sorting
+✔ Flexible comparison logic
+✔ Frequently used in collections
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Comparable vs Comparator
+
+| Feature       | Comparable   | Comparator     |
+| ------------- | ------------ | -------------- |
+| Package       | java.lang    | java.util      |
+| Method        | compareTo()  | compare()      |
+| Sorting Logic | Inside class | Separate class |
+
+---
+
+⚠️ Common Mistakes
+
+❌ Forgetting `implements` keyword
+❌ Not overriding interface methods
+❌ Confusing Comparable with Comparator
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Real Insight
+
+👉 Interfaces are heavily used in:
+
+* Frameworks
+* APIs
+* Large-scale applications
+
+👉 Comparator is widely used in:
+
+* Sorting objects
+* Collections framework
+* Interview coding problems
+
+---
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+📚 Key Takeaways
+
+✔ Interfaces provide abstraction
+✔ Java supports multiple inheritance using interfaces
+✔ Nested interfaces improve organization
+✔ Marker interfaces provide metadata
+✔ Comparator allows custom sorting
+
