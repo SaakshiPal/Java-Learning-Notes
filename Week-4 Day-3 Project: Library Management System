@@ -1,0 +1,263 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 4 – Day 3 Project: Library Management System in Java 📚
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+In this project, you will build a **console-based Library Management System** using Java.
+
+👉 This project helps you practice:
+
+✔ Classes & Objects
+✔ Arrays / ArrayList
+✔ Methods
+✔ OOP Concepts
+✔ Input Handling
+
+---
+
+🎯 Objective
+
+Create a system where users can:
+
+* Add books
+* View books
+* Issue books
+* Return books
+
+---
+
+🧩 Concepts Used
+
+✔ OOP
+✔ ArrayList
+✔ Scanner Class
+✔ Conditional Statements
+✔ Loops
+
+---
+
+📌 Features
+
+✔ Add new books
+✔ Display all books
+✔ Issue a book
+✔ Return a book
+✔ Menu-driven program
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+💻 Complete Java Code
+
+```java id="lib1"
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Book {
+    int id;
+    String name;
+    boolean issued;
+
+    Book(int id, String name) {
+        this.id = id;
+        this.name = name;
+        this.issued = false;
+    }
+
+    void display() {
+        System.out.println(id + " - " + name +
+                (issued ? " [Issued]" : " [Available]"));
+    }
+}
+
+public class LibraryManagementSystem {
+
+    static ArrayList<Book> books = new ArrayList<>();
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int choice;
+
+        do {
+            System.out.println("\n===== Library Menu =====");
+            System.out.println("1. Add Book");
+            System.out.println("2. View Books");
+            System.out.println("3. Issue Book");
+            System.out.println("4. Return Book");
+            System.out.println("5. Exit");
+
+            System.out.print("Enter choice: ");
+            choice = sc.nextInt();
+            sc.nextLine();
+
+            switch (choice) {
+
+                case 1:
+                    addBook(sc);
+                    break;
+
+                case 2:
+                    viewBooks();
+                    break;
+
+                case 3:
+                    issueBook(sc);
+                    break;
+
+                case 4:
+                    returnBook(sc);
+                    break;
+
+                case 5:
+                    System.out.println("Exiting...");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice!");
+            }
+
+        } while (choice != 5);
+
+        sc.close();
+    }
+
+    static void addBook(Scanner sc) {
+
+        System.out.print("Enter Book ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Book Name: ");
+        String name = sc.nextLine();
+
+        books.add(new Book(id, name));
+
+        System.out.println("✅ Book Added Successfully!");
+    }
+
+    static void viewBooks() {
+
+        if (books.isEmpty()) {
+            System.out.println("No books available.");
+            return;
+        }
+
+        System.out.println("\n📚 Book List:");
+
+        for (Book b : books) {
+            b.display();
+        }
+    }
+
+    static void issueBook(Scanner sc) {
+
+        System.out.print("Enter Book ID to issue: ");
+        int id = sc.nextInt();
+
+        for (Book b : books) {
+
+            if (b.id == id) {
+
+                if (!b.issued) {
+                    b.issued = true;
+                    System.out.println("✅ Book Issued!");
+                } else {
+                    System.out.println("❌ Book already issued.");
+                }
+
+                return;
+            }
+        }
+
+        System.out.println("❌ Book not found.");
+    }
+
+    static void returnBook(Scanner sc) {
+
+        System.out.print("Enter Book ID to return: ");
+        int id = sc.nextInt();
+
+        for (Book b : books) {
+
+            if (b.id == id) {
+
+                if (b.issued) {
+                    b.issued = false;
+                    System.out.println("✅ Book Returned!");
+                } else {
+                    System.out.println("❌ Book was not issued.");
+                }
+
+                return;
+            }
+        }
+
+        System.out.println("❌ Book not found.");
+    }
+}
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+▶️ How to Run
+
+1️⃣ Save file as:
+
+```text id="run1"
+LibraryManagementSystem.java
+```
+
+---
+
+2️⃣ Compile:
+
+```bash id="run2"
+javac LibraryManagementSystem.java
+```
+
+---
+
+3️⃣ Run:
+
+```bash id="run3"
+java LibraryManagementSystem
+```
+
+---
+
+🎯 Features of This Project
+
+✔ Menu-driven system
+✔ Object-Oriented design
+✔ Dynamic book storage using ArrayList
+✔ Book issue/return management
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Possible Improvements
+
+* Add file/database storage
+* Add login system
+* Add search feature
+* GUI using Java Swing
+
+---
+
+🧠 Learning Outcome
+
+✔ Better understanding of OOP
+✔ Hands-on project experience
+✔ Improved logic building
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Classes help organize data
+✔ ArrayList stores dynamic data
+✔ Methods improve modularity
+✔ OOP concepts are used in real projects
+
