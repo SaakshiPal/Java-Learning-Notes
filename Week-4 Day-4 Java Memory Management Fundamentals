@@ -1,0 +1,238 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 4 – Day 4 Java Memory Management Fundamentals ☕
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Java automatically manages memory using the JVM.
+
+👉 Memory management helps in:
+
+✔ Efficient program execution
+✔ Preventing memory leaks
+✔ Automatic cleanup of unused objects
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧩 1. What is Memory Management?
+
+Memory management is the process of:
+
+* Allocating memory
+* Using memory
+* Releasing unused memory
+
+Java handles this automatically using:
+
+✔ JVM
+✔ Garbage Collector (GC)
+
+---
+
+🏗️ 2. JVM Memory Structure
+
+Java memory is mainly divided into:
+
+1️⃣ Heap Memory
+2️⃣ Stack Memory
+3️⃣ Method Area
+
+---
+
+📊 JVM Memory Diagram
+
+```text id="m1"
+JVM Memory
+│
+├── Heap Area
+├── Stack Area
+└── Method Area
+```
+
+---
+
+🔹 3. Heap Memory
+
+Heap memory stores:
+
+✔ Objects
+✔ Instance variables
+
+---
+
+📌 Example
+
+```java id="m2"
+Student s = new Student();
+```
+
+👉 Object is stored in Heap Memory.
+
+---
+
+🔹 Features of Heap Memory
+
+✔ Shared among threads
+✔ Managed by Garbage Collector
+✔ Larger memory area
+
+---
+
+🔹 4. Stack Memory
+
+Stack memory stores:
+
+✔ Local variables
+✔ Method calls
+✔ References
+
+---
+
+📌 Example
+
+```java id="m3"
+int x = 10;
+```
+
+👉 `x` is stored in stack memory.
+
+---
+
+🔹 Features of Stack Memory
+
+✔ Thread-specific
+✔ Faster access
+✔ Automatically cleared after method execution
+
+---
+
+🔹 5. Method Area
+
+Stores:
+
+✔ Class metadata
+✔ Static variables
+✔ Method information
+
+---
+
+📌 Example
+
+```java id="m4"
+static int count = 0;
+```
+
+---
+
+♻️ 6. Garbage Collection
+
+Garbage Collection removes unused objects automatically.
+
+---
+
+📌 Example
+
+```java id="m5"
+Student s = new Student();
+s = null;
+```
+
+👉 Object becomes eligible for garbage collection.
+
+---
+
+🔍 How GC Works?
+
+✔ JVM identifies unreachable objects
+✔ Frees heap memory automatically
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚡ Ways to Make Objects Eligible for GC
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Nullifying Reference
+
+```java id="m6"
+obj = null;
+```
+
+---
+
+🔹 Reassigning Reference
+
+```java id="m7"
+obj1 = obj2;
+```
+
+---
+
+🔹 Anonymous Object
+
+```java id="m8"
+new Student();
+```
+
+---
+
+🛠️ finalize() Method
+
+Called before object destruction.
+
+```java id="m9"
+protected void finalize() {
+    System.out.println("Object destroyed");
+}
+```
+
+⚠️ Deprecated in modern Java versions.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Importance of Memory Management
+
+✔ Improves performance
+✔ Prevents memory leaks
+✔ Efficient resource usage
+
+---
+
+⚠️ Common Issues
+
+❌ Memory leaks
+❌ StackOverflowError (deep recursion)
+❌ OutOfMemoryError
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 StackOverflow Example
+
+```java id="m10"
+void recursion() {
+    recursion();
+}
+```
+
+---
+
+🧠 Real Insight
+
+👉 Understanding memory management helps in:
+
+* Performance optimization
+* Debugging applications
+* Building scalable systems
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Heap stores objects
+✔ Stack stores local variables and method calls
+✔ JVM manages memory automatically
+✔ Garbage Collector removes unused objects
+✔ Proper memory management improves performance
+
