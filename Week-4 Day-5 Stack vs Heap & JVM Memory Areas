@@ -1,0 +1,217 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 4 – Day 5 Stack vs Heap & JVM Memory Areas ☕
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Java programs use different memory areas inside the JVM.
+
+👉 Understanding memory structure helps in:
+
+✔ Performance optimization
+✔ Debugging memory issues
+✔ Writing efficient programs
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🏗️ 1. JVM Memory Areas
+
+The JVM mainly contains:
+
+1️⃣ Heap Memory
+2️⃣ Stack Memory
+3️⃣ Method Area
+4️⃣ PC Register
+5️⃣ Native Method Stack
+
+---
+
+📊 JVM Memory Structure
+
+```text id="j1"
+JVM Memory
+│
+├── Heap Memory
+├── Stack Memory
+├── Method Area
+├── PC Register
+└── Native Method Stack
+```
+
+---
+
+🔹 2. Stack Memory
+
+Stack memory stores:
+
+✔ Local variables
+✔ Method calls
+✔ References
+
+---
+
+📌 Example
+
+```java id="s1"
+void test() {
+    int x = 10;
+}
+```
+
+👉 `x` is stored in stack memory.
+
+---
+
+🔍 Features of Stack Memory
+
+✔ Thread-specific
+✔ Fast memory access
+✔ Automatically cleared after method execution
+
+---
+
+⚠️ StackOverflowError
+
+Occurs due to excessive recursion.
+
+```java id="s2"
+void recursion() {
+    recursion();
+}
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3. Heap Memory
+
+Heap memory stores:
+
+✔ Objects
+✔ Instance variables
+
+---
+
+📌 Example
+
+```java id="h1"
+Student s = new Student();
+```
+
+👉 Object is stored in heap memory.
+
+---
+
+🔍 Features of Heap Memory
+
+✔ Shared among threads
+✔ Managed by Garbage Collector
+✔ Larger memory area
+
+---
+
+⚠️ OutOfMemoryError
+
+Occurs when heap memory is full.
+
+---
+
+📊 Stack vs Heap
+
+| Feature         | Stack Memory      | Heap Memory       |
+| --------------- | ----------------- | ----------------- |
+| Stores          | Local variables   | Objects           |
+| Access Speed    | Faster            | Slower            |
+| Memory Size     | Smaller           | Larger            |
+| Thread Specific | ✔ Yes             | ❌ No              |
+| Managed By      | JVM automatically | Garbage Collector |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4. Method Area
+
+Stores:
+
+✔ Class metadata
+✔ Static variables
+✔ Method information
+
+---
+
+📌 Example
+
+```java id="m1"
+static int count = 0;
+```
+
+---
+
+🔹 5. PC Register
+
+Stores address of current JVM instruction for each thread.
+
+✔ Helps JVM track execution flow.
+
+---
+
+🔹 6. Native Method Stack
+
+Used for native methods written in:
+
+* C
+* C++
+
+---
+
+♻️ Garbage Collection & Heap
+
+Garbage Collector removes unused objects from heap memory.
+
+---
+
+📌 Example
+
+```java id="g1"
+Student s = new Student();
+s = null;
+```
+
+👉 Object becomes eligible for garbage collection.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Why Memory Understanding Matters?
+
+✔ Improves coding efficiency
+✔ Helps optimize applications
+✔ Important for interviews
+
+---
+
+⚠️ Common Mistakes
+
+❌ Creating unnecessary objects
+❌ Infinite recursion
+❌ Memory leaks due to unused references
+
+---
+
+🧠 Real Insight
+
+👉 Most Java performance issues are related to:
+
+* Heap memory usage
+* Object creation
+* Garbage collection
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Stack stores local variables and method calls
+✔ Heap stores objects
+✔ Method area stores class-level data
+✔ Garbage Collector manages heap memory
+✔ JVM contains multiple memory areas
+
