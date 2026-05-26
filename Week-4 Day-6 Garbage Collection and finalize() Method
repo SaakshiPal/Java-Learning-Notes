@@ -1,0 +1,224 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 4 – Day 6 Garbage Collection & finalize() Method in Java ☕
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Java automatically manages memory using **Garbage Collection (GC)**.
+
+👉 Garbage Collection helps in:
+
+✔ Removing unused objects
+✔ Freeing heap memory
+✔ Improving memory efficiency
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+♻️ 1. What is Garbage Collection?
+
+Garbage Collection is the process of automatically destroying unused objects.
+
+---
+
+📌 Example
+
+```java id="g1"
+Student s = new Student();
+s = null;
+```
+
+👉 The object becomes eligible for Garbage Collection.
+
+---
+
+🔍 Why Garbage Collection?
+
+✔ Prevents memory leaks
+✔ Reduces manual memory management
+✔ Improves application stability
+
+---
+
+🏗️ 2. Objects Stored in Heap
+
+All objects are created inside heap memory.
+
+```java id="g2"
+Book b = new Book();
+```
+
+---
+
+📌 Eligible for Garbage Collection
+
+An object becomes eligible when it is no longer reachable.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Ways to Make Objects Eligible
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1️⃣ Nullifying Reference
+
+```java id="g3"
+Student s = new Student();
+s = null;
+```
+
+---
+
+2️⃣ Reassigning Reference
+
+```java id="g4"
+Student s1 = new Student();
+Student s2 = new Student();
+
+s1 = s2;
+```
+
+👉 First object becomes unreachable.
+
+---
+
+3️⃣ Anonymous Objects
+
+```java id="g5"
+new Student();
+```
+
+---
+
+4️⃣ Objects Inside Method
+
+```java id="g6"
+void test() {
+    Student s = new Student();
+}
+```
+
+👉 Object becomes unreachable after method execution.
+
+---
+
+⚡ 3. Requesting Garbage Collection
+
+We can request JVM to run GC using:
+
+```java id="g7"
+System.gc();
+```
+
+OR
+
+```java id="g8"
+Runtime.getRuntime().gc();
+```
+
+⚠️ JVM may ignore the request.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🛠️ 4. finalize() Method
+
+`finalize()` is called before object destruction by GC.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="f1"
+protected void finalize() {
+    System.out.println("Object destroyed");
+}
+```
+
+---
+
+💻 Example
+
+```java id="f2"
+class Demo {
+
+    protected void finalize() {
+        System.out.println("Finalize method called");
+    }
+
+    public static void main(String[] args) {
+
+        Demo d = new Demo();
+
+        d = null;
+
+        System.gc();
+    }
+}
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Important Note
+
+`finalize()` is deprecated in modern Java versions.
+
+👉 Not recommended for resource cleanup.
+
+---
+
+🔍 Why finalize() is Deprecated?
+
+❌ Unpredictable execution
+❌ Performance overhead
+❌ Security issues
+
+---
+
+✅ Modern Alternative
+
+Use:
+
+✔ try-with-resources
+✔ Explicit resource closing
+
+---
+
+# 📊 Garbage Collection Process
+
+```text id="g9"
+Create Object → Use Object → Object Becomes Unreachable → GC Removes Object
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Advantages of Garbage Collection
+
+✔ Automatic memory management
+✔ Prevents dangling pointers
+✔ Reduces programmer effort
+
+---
+
+⚠️ Common Issues
+
+❌ Excessive object creation
+❌ Memory leaks due to references
+❌ Assuming GC runs immediately
+
+---
+
+🧠 Real Insight
+
+👉 Garbage Collection is one reason Java is safer than C/C++ because developers do not manually free memory.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Garbage Collection removes unused objects
+✔ Objects in heap can become unreachable
+✔ `System.gc()` requests GC execution
+✔ `finalize()` is deprecated
+✔ Modern Java prefers automatic resource management
+
