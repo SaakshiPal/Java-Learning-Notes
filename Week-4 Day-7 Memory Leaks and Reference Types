@@ -1,0 +1,218 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 4 – Day 7 Memory Leaks & Reference Types in Java ☕
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Java provides automatic memory management, but memory-related problems can still occur.
+
+👉 Important concepts:
+
+✔ Memory Leaks
+✔ Reference Types
+✔ Efficient memory handling
+
+These topics are very important for performance optimization and interviews.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ 1. What is a Memory Leak?
+
+A memory leak happens when objects are no longer needed but are still referenced in memory.
+
+👉 Garbage Collector cannot remove them.
+
+---
+
+# 📌 Example of Memory Leak
+
+```java id="m1"
+import java.util.ArrayList;
+
+class Demo {
+    public static void main(String[] args) {
+
+        ArrayList<Object> list = new ArrayList<>();
+
+        while (true) {
+            list.add(new Object());
+        }
+    }
+}
+```
+
+---
+
+🔍 Problem
+
+✔ Objects keep getting stored
+✔ References remain inside list
+✔ Heap memory becomes full
+
+👉 Causes:
+
+```text id="m2"
+OutOfMemoryError
+```
+
+---
+
+🎯 Causes of Memory Leaks
+
+* Unused object references
+* Static collections
+* Unclosed resources
+* Event listeners not removed
+
+---
+
+✅ Preventing Memory Leaks
+
+✔ Remove unnecessary references
+✔ Close files and database connections
+✔ Use weak references when needed
+✔ Avoid excessive static objects
+
+---
+
+🔹 Example
+
+```java id="m3"
+obj = null;
+```
+
+👉 Makes object eligible for GC.
+
+---
+
+🧩 2. Reference Types in Java
+
+Java provides different reference types for memory-sensitive applications.
+
+---
+
+📊 Types of References
+
+1️⃣ Strong Reference
+2️⃣ Weak Reference
+3️⃣ Soft Reference
+4️⃣ Phantom Reference
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1. Strong Reference
+
+Default reference type.
+
+```java id="r1"
+Student s = new Student();
+```
+
+✔ Object will NOT be garbage collected while reference exists.
+
+---
+
+🔹 2. Weak Reference
+
+Object can be garbage collected if only weak references exist.
+
+---
+
+📌 Example
+
+```java id="r2"
+import java.lang.ref.WeakReference;
+
+Student s = new Student();
+
+WeakReference<Student> weakRef =
+        new WeakReference<>(s);
+```
+
+---
+
+🎯 Uses
+
+✔ Caching
+✔ Avoiding memory leaks
+
+---
+
+🔹 3. Soft Reference
+
+Object remains until JVM needs memory.
+
+---
+
+📌 Example
+
+```java id="r3"
+import java.lang.ref.SoftReference;
+
+SoftReference<Student> softRef =
+        new SoftReference<>(new Student());
+```
+
+---
+
+🎯 Uses
+
+✔ Memory-sensitive caches
+
+---
+
+🔹 4. Phantom Reference
+
+Used for advanced memory management.
+
+```java id="r4"
+import java.lang.ref.PhantomReference;
+```
+
+👉 Cannot directly access object.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Comparison of Reference Types
+
+| Reference Type | GC Behavior                  |
+| -------------- | ---------------------------- |
+| Strong         | Never collected immediately  |
+| Weak           | Collected quickly            |
+| Soft           | Collected when memory needed |
+| Phantom        | Used for cleanup tracking    |
+
+---
+
+⚡ Real-World Uses
+
+* Image caching
+* Framework memory optimization
+* JVM internals
+* Resource cleanup systems
+
+---
+
+⚠️ Common Mistakes
+
+❌ Keeping unnecessary object references
+❌ Using static collections carelessly
+❌ Forgetting to close resources
+
+---
+
+🧠 Real Insight
+
+👉 Even with Garbage Collection, developers must manage references properly to avoid memory issues.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Memory leaks happen due to unused references
+✔ Garbage Collector cannot remove referenced objects
+✔ Java provides multiple reference types
+✔ Weak & Soft references help optimize memory usage
+
