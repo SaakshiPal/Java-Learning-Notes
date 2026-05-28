@@ -1,0 +1,224 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 5 – Day 1 Java Packages: Built-in & User-defined ☕
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Packages in Java are used to organize related classes and interfaces.
+
+👉 Packages help in:
+
+✔ Code organization
+✔ Avoiding name conflicts
+✔ Access control
+✔ Reusability
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📦 1. What is a Package?
+
+A package is a collection of related classes, interfaces, and sub-packages.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="p1"
+package packageName;
+```
+
+---
+
+📌 Example
+
+```java id="p2"
+package mypackage;
+
+class Demo {
+    void show() {
+        System.out.println("Inside Package");
+    }
+}
+```
+
+---
+
+🎯 Advantages of Packages
+
+✔ Better code management
+✔ Avoids class name conflicts
+✔ Provides access protection
+✔ Makes large projects manageable
+
+---
+
+🏗️ 2. Types of Packages
+
+1️⃣ Built-in Packages
+2️⃣ User-defined Packages
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3. Built-in Packages
+
+Java provides many predefined packages.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Common Built-in Packages
+
+| Package     | Purpose                       |
+| ----------- | ----------------------------- |
+| `java.lang` | Core language classes         |
+| `java.util` | Utility classes & collections |
+| `java.io`   | Input/output operations       |
+| `java.sql`  | Database connectivity         |
+| `java.net`  | Networking                    |
+
+---
+
+📌 Example
+
+```java id="b1"
+import java.util.Scanner;
+
+class Test {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int num = sc.nextInt();
+
+        System.out.println(num);
+    }
+}
+```
+
+---
+
+🔍 import Statement
+
+Used to access classes from packages.
+
+```java id="b2"
+import java.util.Scanner;
+```
+
+OR
+
+```java id="b3"
+import java.util.*;
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4. User-defined Packages
+
+Packages created by programmers.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Creating User-defined Package
+
+```java id="u1"
+package mypackage;
+
+public class Message {
+
+    public void show() {
+        System.out.println("Hello from package");
+    }
+}
+```
+
+---
+
+📌 Save File Structure
+
+```text id="u2"
+mypackage/
+    Message.java
+```
+
+---
+
+▶️ Compile Package
+
+```bash id="u3"
+javac -d . Message.java
+```
+
+---
+
+▶️ Using Package Class
+
+```java id="u4"
+import mypackage.Message;
+
+class Main {
+    public static void main(String[] args) {
+
+        Message obj = new Message();
+
+        obj.show();
+    }
+}
+```
+
+---
+
+▶️ Run Program
+
+```bash id="u5"
+java Main
+```
+
+---
+
+🧩 Sub-Packages
+
+Packages can contain sub-packages.
+
+```java id="u6"
+package com.company.project;
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Mistakes
+
+❌ Wrong folder structure
+❌ Missing package statement
+❌ Incorrect import statement
+❌ Forgetting `public` keyword
+
+---
+
+🧠 Real Insight
+
+👉 Large Java projects use packages extensively for modular development.
+
+Examples:
+
+* Banking systems
+* Web applications
+* Android apps
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Packages organize Java code
+✔ Built-in packages provide predefined classes
+✔ User-defined packages improve modularity
+✔ `import` keyword accesses package classes
+✔ Packages prevent naming conflicts
+
+
+If you want next, I can create:
+
+🔥 Exception Handling full notes
+🔥 Collections Framework
+🔥 Java interview questions 🚀
