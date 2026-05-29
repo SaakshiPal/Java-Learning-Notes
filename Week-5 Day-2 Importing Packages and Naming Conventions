@@ -1,0 +1,230 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 5 – Day 2 Importing Packages & Naming Conventions in Java ☕
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Java programs often use classes from different packages.
+
+👉 To access those classes, Java provides the `import` statement.
+
+Following proper naming conventions also makes code:
+
+✔ Readable
+✔ Maintainable
+✔ Professional
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📦 1. Importing Packages
+
+The `import` keyword is used to access classes and interfaces from another package.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="i1"
+import packageName.ClassName;
+```
+
+---
+
+📌 Example
+
+```java id="i2"
+import java.util.Scanner;
+
+class Demo {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter Name:");
+        String name = sc.nextLine();
+
+        System.out.println(name);
+    }
+}
+```
+
+---
+
+🔹 Import Entire Package
+
+```java id="i3"
+import java.util.*;
+```
+
+👉 Imports all classes from the package.
+
+---
+
+🔹 Multiple Imports
+
+```java id="i4"
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.HashMap;
+```
+
+---
+
+🔹 Fully Qualified Name
+
+Instead of importing:
+
+```java id="i5"
+java.util.Scanner sc =
+        new java.util.Scanner(System.in);
+```
+
+---
+
+🎯 Advantages of Import
+
+✔ Cleaner code
+✔ Easier class access
+✔ Better readability
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Common Built-in Packages
+
+| Package     | Purpose                 |
+| ----------- | ----------------------- |
+| `java.lang` | Core Java classes       |
+| `java.util` | Collections & utilities |
+| `java.io`   | Input and Output        |
+| `java.sql`  | Database connectivity   |
+| `java.net`  | Networking              |
+
+---
+
+🔍 Special Note
+
+Classes from `java.lang` are imported automatically.
+
+Example:
+
+```java id="i6"
+String name = "Java";
+System.out.println(name);
+```
+
+No import needed.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🏷️ 2. Java Naming Conventions
+
+Naming conventions are recommended standards for naming Java elements.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 Class Names
+
+Use **PascalCase**.
+
+```java id="n1"
+class StudentManagementSystem {
+}
+```
+
+✔ First letter of every word is capitalized.
+
+---
+
+🔹 Interface Names
+
+Also use **PascalCase**.
+
+```java id="n2"
+interface Printable {
+}
+```
+
+---
+
+🔹 Method Names
+
+Use **camelCase**.
+
+```java id="n3"
+void calculateSalary() {
+}
+```
+
+---
+
+🔹 Variable Names
+
+Use **camelCase**.
+
+```java id="n4"
+int studentAge;
+String employeeName;
+```
+
+---
+
+🔹 Constant Names
+
+Use **UPPER_CASE**.
+
+```java id="n5"
+final int MAX_SIZE = 100;
+```
+
+---
+
+🔹 Package Names
+
+Use **lowercase letters**.
+
+```java id="n6"
+package com.company.project;
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Naming Convention Summary
+
+| Element   | Convention | Example             |
+| --------- | ---------- | ------------------- |
+| Class     | PascalCase | StudentRecord       |
+| Interface | PascalCase | Runnable            |
+| Method    | camelCase  | displayData()       |
+| Variable  | camelCase  | totalMarks          |
+| Constant  | UPPER_CASE | MAX_VALUE           |
+| Package   | lowercase  | com.example.project |
+
+---
+
+⚠️ Common Mistakes
+
+❌ Using spaces in names
+❌ Starting variable names with numbers
+❌ Using inconsistent naming styles
+❌ Using uppercase package names
+
+---
+
+🧠 Real Insight
+
+👉 Good naming conventions make large projects easier to understand and maintain.
+
+Most companies enforce coding standards during development.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ `import` allows access to external package classes
+✔ `java.lang` is imported automatically
+✔ Use PascalCase for classes and interfaces
+✔ Use camelCase for methods and variables
+✔ Use UPPER_CASE for constants
+
