@@ -1,0 +1,241 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 5 – Day 2 Project: Online Quiz System in Java 📝
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+In this project, you will build a **console-based Online Quiz System** using Java.
+
+👉 This project helps you practice:
+
+✔ Classes & Objects
+✔ Arrays / ArrayList
+✔ Loops
+✔ Conditional Statements
+✔ User Input Handling
+
+---
+
+🎯 Objective
+
+Create a quiz application where:
+
+* Questions are displayed one by one
+* User selects answers
+* Score is calculated automatically
+* Final result is displayed
+
+---
+
+🧩 Concepts Used
+
+✔ OOP Concepts
+✔ Arrays
+✔ Scanner Class
+✔ Methods
+✔ Control Statements
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Features
+
+✔ Multiple-choice questions
+✔ Automatic score calculation
+✔ Result display
+✔ User-friendly menu
+
+---
+
+💻 Complete Java Code
+
+```java id="quiz1"
+import java.util.Scanner;
+
+class Question {
+    String question;
+    String[] options;
+    int correctAnswer;
+
+    Question(String question, String[] options, int correctAnswer) {
+        this.question = question;
+        this.options = options;
+        this.correctAnswer = correctAnswer;
+    }
+
+    boolean checkAnswer(int answer) {
+        return answer == correctAnswer;
+    }
+}
+
+public class OnlineQuizSystem {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        Question[] questions = {
+            new Question(
+                "Which language is platform independent?",
+                new String[]{"1. C", "2. Java", "3. Python", "4. C++"},
+                2
+            ),
+
+            new Question(
+                "Who developed Java?",
+                new String[]{"1. Microsoft", "2. IBM", "3. Sun Microsystems", "4. Apple"},
+                3
+            ),
+
+            new Question(
+                "Which keyword is used to inherit a class?",
+                new String[]{"1. implement", "2. extends", "3. import", "4. package"},
+                2
+            ),
+
+            new Question(
+                "Which collection allows duplicate elements?",
+                new String[]{"1. Set", "2. HashSet", "3. ArrayList", "4. TreeSet"},
+                3
+            ),
+
+            new Question(
+                "What is JVM?",
+                new String[]{
+                    "1. Java Virtual Machine",
+                    "2. Java Variable Method",
+                    "3. Java Verification Model",
+                    "4. Java Visual Machine"
+                },
+                1
+            )
+        };
+
+        int score = 0;
+
+        System.out.println("===== ONLINE QUIZ SYSTEM =====");
+
+        for (int i = 0; i < questions.length; i++) {
+
+            System.out.println("\nQ" + (i + 1) + ". " + questions[i].question);
+
+            for (String option : questions[i].options) {
+                System.out.println(option);
+            }
+
+            System.out.print("Enter your answer (1-4): ");
+            int answer = sc.nextInt();
+
+            if (questions[i].checkAnswer(answer)) {
+                System.out.println("✅ Correct!");
+                score++;
+            } else {
+                System.out.println("❌ Wrong Answer!");
+            }
+        }
+
+        System.out.println("\n===== QUIZ RESULT =====");
+        System.out.println("Total Questions : " + questions.length);
+        System.out.println("Correct Answers : " + score);
+        System.out.println("Wrong Answers   : " + (questions.length - score));
+
+        double percentage = (score * 100.0) / questions.length;
+
+        System.out.println("Percentage      : " + percentage + "%");
+
+        if (percentage >= 80) {
+            System.out.println("🎉 Excellent!");
+        } else if (percentage >= 60) {
+            System.out.println("👍 Good Job!");
+        } else {
+            System.out.println("📚 Keep Practicing!");
+        }
+
+        sc.close();
+    }
+}
+```
+
+---
+
+▶️ How to Run
+
+1️⃣ Save File
+
+```text id="run1"
+OnlineQuizSystem.java
+```
+
+---
+
+2️⃣ Compile
+
+```bash id="run2"
+javac OnlineQuizSystem.java
+```
+
+---
+
+3️⃣ Run
+
+```bash id="run3"
+java OnlineQuizSystem
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Sample Output
+
+```text id="out1"
+===== ONLINE QUIZ SYSTEM =====
+
+Q1. Which language is platform independent?
+1. C
+2. Java
+3. Python
+4. C++
+
+Enter your answer: 2
+
+✅ Correct!
+```
+
+---
+
+🎯 Features of This Project
+
+✔ Multiple-choice questions
+✔ Instant answer validation
+✔ Automatic scoring
+✔ Percentage calculation
+✔ Performance feedback
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Possible Improvements
+
+* Randomize questions
+* Add timer for each question
+* Store scores in a file
+* Add login system
+* Create GUI using Swing or JavaFX
+
+---
+
+🧠 Learning Outcome
+
+✔ Better understanding of arrays and objects
+✔ Experience with user input handling
+✔ Practice with loops and conditions
+✔ Mini real-world project development
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Classes help model real-world entities
+✔ Arrays can store multiple questions
+✔ Loops automate quiz flow
+✔ Conditions evaluate answers and results
+
