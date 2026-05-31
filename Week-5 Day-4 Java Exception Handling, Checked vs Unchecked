@@ -1,0 +1,271 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 5 – Day 4 Java Exception Handling & Checked vs Unchecked Exceptions ☕
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Exceptions are events that occur during program execution and disrupt the normal flow of a program.
+
+👉 Exception Handling helps:
+
+✔ Prevent program crashes
+✔ Handle errors gracefully
+✔ Improve application reliability
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ 1. What is an Exception?
+
+An exception is an abnormal condition that occurs during runtime.
+
+---
+
+📌 Example
+
+```java id="e1"
+int a = 10;
+int b = 0;
+
+System.out.println(a / b);
+```
+
+---
+
+❌ Output
+
+```text id="e2"
+Exception in thread "main"
+java.lang.ArithmeticException: / by zero
+```
+
+---
+
+🎯 Why Handle Exceptions?
+
+✔ Prevent unexpected termination
+✔ Improve user experience
+✔ Maintain program stability
+
+---
+
+🔹 2. Exception Hierarchy
+
+```text id="e3"
+Object
+   │
+Throwable
+   ├── Error
+   └── Exception
+         ├── Checked Exceptions
+         └── RuntimeException
+               └── Unchecked Exceptions
+```
+
+---
+
+🛠️ 3. Exception Handling Keywords
+
+Java provides:
+
+* `try`
+* `catch`
+* `finally`
+* `throw`
+* `throws`
+
+---
+
+📌 Basic Syntax
+
+```java id="e4"
+try {
+    // risky code
+}
+catch(Exception e) {
+    // handling code
+}
+finally {
+    // cleanup code
+}
+```
+
+---
+
+💻 Example
+
+```java id="e5"
+try {
+    int result = 10 / 0;
+}
+catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero");
+}
+finally {
+    System.out.println("Program Ended");
+}
+```
+
+---
+
+🔹 4. Checked Exceptions
+
+Checked exceptions are checked by the compiler at compile time.
+
+👉 Must be handled using `try-catch` or `throws`.
+
+---
+
+# 📌 Example
+
+```java id="e6"
+import java.io.FileReader;
+
+FileReader file =
+        new FileReader("data.txt");
+```
+
+---
+
+🔍 Common Checked Exceptions
+
+| Exception              | Description        |
+| ---------------------- | ------------------ |
+| IOException            | Input/Output error |
+| FileNotFoundException  | File not found     |
+| SQLException           | Database error     |
+| ClassNotFoundException | Class not found    |
+
+---
+
+🔹 5. Unchecked Exceptions
+
+Unchecked exceptions occur during runtime.
+
+👉 Compiler does not force handling.
+
+---
+
+📌 Example
+
+```java id="e7"
+int[] arr = {1, 2, 3};
+
+System.out.println(arr[5]);
+```
+
+---
+
+❌ Output
+
+```text id="e8"
+ArrayIndexOutOfBoundsException
+```
+
+---
+
+🔍 Common Unchecked Exceptions
+
+| Exception                      | Description               |
+| ------------------------------ | ------------------------- |
+| ArithmeticException            | Divide by zero            |
+| NullPointerException           | Null reference            |
+| ArrayIndexOutOfBoundsException | Invalid index             |
+| NumberFormatException          | Invalid number conversion |
+
+---
+
+📊 Checked vs Unchecked Exceptions
+
+| Feature             | Checked Exception | Unchecked Exception |
+| ------------------- | ----------------- | ------------------- |
+| Checked by Compiler | ✔ Yes             | ❌ No                |
+| Occurs At           | Compile Time      | Runtime             |
+| Must Handle         | ✔ Yes             | ❌ No                |
+| Parent Class        | Exception         | RuntimeException    |
+
+---
+
+🔹 6. throw Keyword
+
+Used to manually create an exception.
+
+---
+
+📌 Example
+
+```java id="e9"
+throw new ArithmeticException("Invalid operation");
+```
+
+---
+
+🔹 7. throws Keyword
+
+Used to declare exceptions.
+
+---
+
+📌 Example
+
+```java id="e10"
+void readFile() throws IOException {
+}
+```
+
+---
+
+🔹 8. Multiple Catch Blocks
+
+```java id="e11"
+try {
+    int[] arr = new int[5];
+    arr[10] = 100;
+}
+catch (ArithmeticException e) {
+    System.out.println("Arithmetic Error");
+}
+catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("Array Error");
+}
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Advantages of Exception Handling
+
+✔ Prevents abnormal termination
+✔ Separates error-handling code
+✔ Improves code readability
+
+---
+
+⚠️ Common Mistakes
+
+❌ Empty catch blocks
+❌ Catching generic `Exception` unnecessarily
+❌ Ignoring exception messages
+
+---
+
+🧠 Real Insight
+
+👉 In real-world applications, exception handling is used in:
+
+* File operations
+* Database connectivity
+* Network programming
+* Web applications
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Exceptions handle runtime errors gracefully
+✔ Checked exceptions are verified by compiler
+✔ Unchecked exceptions occur during runtime
+✔ `try`, `catch`, `finally` manage exceptions
+✔ `throw` and `throws` help create and declare exceptions
+
+
