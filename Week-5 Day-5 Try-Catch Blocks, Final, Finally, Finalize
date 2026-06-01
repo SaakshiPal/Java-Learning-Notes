@@ -1,0 +1,298 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 5 – Day 5 Try-Catch Blocks, final, finally & finalize() ☕
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Java provides several mechanisms for:
+
+✔ Handling exceptions
+✔ Controlling inheritance and modification
+✔ Cleaning up resources
+
+Although `final`, `finally`, and `finalize()` sound similar, they serve completely different purposes.
+
+👉 This is a very common Java interview topic.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🛠️ 1. try-catch Blocks
+
+Used to handle exceptions and prevent program crashes.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="tc1"
+try {
+    // risky code
+}
+catch(Exception e) {
+    // exception handling
+}
+```
+
+---
+
+📌 Example
+
+```java id="tc2"
+public class Demo {
+    public static void main(String[] args) {
+
+        try {
+            int result = 10 / 0;
+            System.out.println(result);
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero");
+        }
+    }
+}
+```
+
+---
+
+📌 Output
+
+```text id="tc3"
+Cannot divide by zero
+```
+
+---
+
+🔹 Multiple Catch Blocks
+
+```java id="tc4"
+try {
+    String str = null;
+    System.out.println(str.length());
+}
+catch (ArithmeticException e) {
+    System.out.println("Arithmetic Error");
+}
+catch (NullPointerException e) {
+    System.out.println("Null Error");
+}
+```
+
+---
+
+🔹 Nested Try Block
+
+```java id="tc5"
+try {
+    try {
+        int a = 10 / 0;
+    }
+    catch (ArithmeticException e) {
+        System.out.println("Inner Catch");
+    }
+}
+catch (Exception e) {
+    System.out.println("Outer Catch");
+}
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔒 2. final Keyword
+
+The `final` keyword is used to restrict modifications.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 final Variable
+
+```java id="f1"
+final int MAX = 100;
+```
+
+✔ Value cannot be changed.
+
+---
+
+🔹 final Method
+
+```java id="f2"
+final void display() {
+    System.out.println("Final Method");
+}
+```
+
+✔ Cannot be overridden.
+
+---
+
+🔹 final Class
+
+```java id="f3"
+final class Vehicle {
+}
+```
+
+✔ Cannot be inherited.
+
+---
+
+📌 Summary
+
+| Usage          | Purpose             |
+| -------------- | ------------------- |
+| final variable | Constant value      |
+| final method   | Prevent overriding  |
+| final class    | Prevent inheritance |
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧹 3. finally Block
+
+The `finally` block executes whether an exception occurs or not.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="fi1"
+try {
+}
+catch(Exception e) {
+}
+finally {
+}
+```
+
+---
+
+📌 Example
+
+```java id="fi2"
+try {
+    int result = 10 / 0;
+}
+catch (Exception e) {
+    System.out.println("Exception Handled");
+}
+finally {
+    System.out.println("Finally Executed");
+}
+```
+
+---
+
+📌 Output
+
+```text id="fi3"
+Exception Handled
+Finally Executed
+```
+
+---
+
+🎯 Uses of finally
+
+✔ Closing files
+✔ Closing database connections
+✔ Resource cleanup
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+♻️ 4. finalize() Method
+
+The `finalize()` method is called by the Garbage Collector before destroying an object.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="fz1"
+protected void finalize() {
+    System.out.println("Finalize Called");
+}
+```
+
+---
+
+📌 Example
+
+```java id="fz2"
+class Demo {
+
+    protected void finalize() {
+        System.out.println("Object Removed");
+    }
+
+    public static void main(String[] args) {
+
+        Demo obj = new Demo();
+
+        obj = null;
+
+        System.gc();
+    }
+}
+```
+
+---
+
+⚠️ Important Note
+
+`finalize()` has been deprecated in modern Java versions.
+
+👉 It should not be used for resource cleanup.
+
+---
+
+✅ Modern Alternative
+
+Use:
+
+```java id="fz3"
+try-with-resources
+```
+
+for automatic resource management.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 final vs finally vs finalize()
+
+| Feature                | final                   | finally            | finalize()         |
+| ---------------------- | ----------------------- | ------------------ | ------------------ |
+| Type                   | Keyword                 | Block              | Method             |
+| Purpose                | Restriction             | Cleanup execution  | GC callback        |
+| Used With              | Variable, Method, Class | Exception Handling | Garbage Collection |
+| Executes Automatically | ❌ No                    | ✔ Yes              | ✔ By GC            |
+| Recommended Today      | ✔ Yes                   | ✔ Yes              | ❌ Deprecated       |
+
+---
+
+⚠️ Common Mistakes
+
+❌ Confusing `final` with `finally`
+❌ Using `finalize()` for cleanup
+❌ Forgetting `finally` for resource management
+
+---
+
+🧠 Real Insight
+
+👉 In modern Java:
+
+* `final` is widely used
+* `finally` is commonly used
+* `finalize()` is rarely used and deprecated
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ `try-catch` handles exceptions
+✔ `final` restricts modifications
+✔ `finally` always executes after try/catch
+✔ `finalize()` is called before object destruction
+✔ `finalize()` is deprecated in modern Java
+
