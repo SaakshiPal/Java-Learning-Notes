@@ -1,0 +1,248 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 5 – Day 6 Customized Exceptions & Chained Exceptions ☕
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Java allows developers to create their own exceptions when built-in exceptions are not sufficient.
+
+👉 This helps in:
+
+✔ Better error handling
+✔ Business rule validation
+✔ Meaningful error messages
+
+Java also supports **Exception Chaining**, which helps track the original cause of an exception.
+
+---
+
+🎯 Why Create Custom Exceptions?
+
+Built-in exceptions may not always describe application-specific errors.
+
+Examples:
+
+* Invalid Age
+* Insufficient Balance
+* Invalid Employee ID
+* Invalid Exam Marks
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1. Customized Exceptions
+
+A customized (user-defined) exception is created by extending the `Exception` class.
+
+---
+
+📌 Syntax
+
+```java id="c1"
+class MyException extends Exception {
+
+    MyException(String message) {
+        super(message);
+    }
+}
+```
+
+---
+
+# 💻 Example: Invalid Age Exception
+
+```java id="c2"
+class InvalidAgeException extends Exception {
+
+    InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+public class Demo {
+
+    static void validateAge(int age)
+            throws InvalidAgeException {
+
+        if (age < 18) {
+            throw new InvalidAgeException(
+                    "Age must be 18 or above");
+        }
+
+        System.out.println("Eligible");
+    }
+
+    public static void main(String[] args) {
+
+        try {
+            validateAge(15);
+        }
+        catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+```
+
+---
+
+📌 Output
+
+```text id="c3"
+Age must be 18 or above
+```
+
+---
+
+🔹 Steps to Create Custom Exception
+
+1️⃣ Create a class extending `Exception`
+2️⃣ Create constructor
+3️⃣ Use `throw`
+4️⃣ Handle using `try-catch`
+
+---
+
+🏦 Real-World Example
+
+```java id="c4"
+class InsufficientBalanceException
+        extends Exception {
+
+    InsufficientBalanceException(String msg) {
+        super(msg);
+    }
+}
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔗 2. Chained Exceptions
+
+Exception Chaining means associating one exception with another.
+
+👉 Helps identify the root cause of an error.
+
+---
+
+📌 Syntax
+
+```java id="ch1"
+Throwable cause = new Exception();
+
+Exception e =
+        new Exception("New Exception", cause);
+```
+
+---
+
+💻 Example
+
+```java id="ch2"
+public class Demo {
+
+    public static void main(String[] args) {
+
+        try {
+
+            NumberFormatException cause =
+                    new NumberFormatException(
+                            "Invalid Number");
+
+            throw new Exception(
+                    "Application Error",
+                    cause);
+
+        }
+        catch (Exception e) {
+
+            System.out.println(
+                    "Main Exception: " +
+                    e.getMessage());
+
+            System.out.println(
+                    "Cause: " +
+                    e.getCause());
+        }
+    }
+}
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Output
+
+```text id="ch3"
+Main Exception: Application Error
+Cause: java.lang.NumberFormatException:
+Invalid Number
+```
+
+---
+
+🔍 Why Use Chained Exceptions?
+
+✔ Preserve original exception details
+✔ Easier debugging
+✔ Better error tracking
+
+---
+
+📌 Using initCause()
+
+You can set the cause later.
+
+```java id="ch4"
+Exception e = new Exception("Main Error");
+
+e.initCause(
+        new ArithmeticException("Divide by Zero"));
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Custom Exception vs Built-in Exception
+
+| Feature     | Custom Exception     | Built-in Exception |
+| ----------- | -------------------- | ------------------ |
+| Created By  | Developer            | Java               |
+| Purpose     | Application-specific | General errors     |
+| Flexibility | High                 | Limited            |
+
+---
+
+⚠️ Common Mistakes
+
+❌ Extending wrong class
+❌ Not calling `super(message)`
+❌ Ignoring root cause in chained exceptions
+❌ Using generic exception everywhere
+
+---
+
+🧠 Real Insight
+
+👉 Most enterprise applications create custom exceptions for:
+
+* Banking systems
+* E-commerce platforms
+* Hospital management systems
+* Authentication systems
+
+👉 Chained exceptions are widely used in frameworks such as:
+
+* Spring
+* Hibernate
+* JDBC
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Custom exceptions represent application-specific errors
+✔ Create them by extending `Exception`
+✔ Use `throw` to generate exceptions
+✔ Chained exceptions preserve original causes
+✔ `getCause()` helps identify root problems
+
