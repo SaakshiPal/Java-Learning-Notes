@@ -1,0 +1,284 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 5 – Day 7 Wrapper Classes & Autoboxing in Java ☕
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Java provides Wrapper Classes to convert primitive data types into objects.
+
+👉 Wrapper Classes are important because:
+
+✔ Collections store objects, not primitives
+✔ Utility methods become available
+✔ Easier type conversions
+
+Java also supports:
+
+* Autoboxing
+* Unboxing
+
+These features automatically convert between primitives and wrapper objects.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1. What are Wrapper Classes?
+
+Wrapper Classes are object representations of primitive data types.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Primitive Types and Wrapper Classes
+
+| Primitive Type | Wrapper Class |
+| -------------- | ------------- |
+| byte           | Byte          |
+| short          | Short         |
+| int            | Integer       |
+| long           | Long          |
+| float          | Float         |
+| double         | Double        |
+| char           | Character     |
+| boolean        | Boolean       |
+
+---
+
+📌 Example
+
+```java id="w1"
+int number = 100;
+
+Integer obj = Integer.valueOf(number);
+
+System.out.println(obj);
+```
+
+---
+
+🎯 Why Wrapper Classes?
+
+✔ Needed in Collections Framework
+✔ Utility methods available
+✔ Supports object-oriented programming
+
+---
+
+📌 Example with ArrayList
+
+```java id="w2"
+import java.util.ArrayList;
+
+ArrayList<Integer> list =
+        new ArrayList<>();
+
+list.add(10);
+list.add(20);
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 2. Autoboxing
+
+Autoboxing is the automatic conversion of a primitive type into its corresponding wrapper object.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Example
+
+```java id="a1"
+int num = 50;
+
+Integer obj = num;
+```
+
+---
+
+🔍 Behind the Scenes
+
+Java internally performs:
+
+```java id="a2"
+Integer obj =
+        Integer.valueOf(num);
+```
+
+---
+
+🎯 Benefits of Autoboxing
+
+✔ Cleaner code
+✔ Automatic conversion
+✔ Useful with collections
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔄 3. Unboxing
+
+Unboxing is the automatic conversion of a wrapper object into its primitive type.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Example
+
+```java id="u1"
+Integer obj = 100;
+
+int num = obj;
+```
+
+---
+
+🔍 Behind the Scenes
+
+Java internally performs:
+
+```java id="u2"
+int num =
+        obj.intValue();
+```
+
+---
+
+💻 Complete Example
+
+```java id="ex1"
+public class Demo {
+
+    public static void main(String[] args) {
+
+        int age = 21;
+
+        Integer ageObj = age;   // Autoboxing
+
+        int value = ageObj;     // Unboxing
+
+        System.out.println(ageObj);
+        System.out.println(value);
+    }
+}
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🛠️ Useful Wrapper Class Methods
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 parseInt()
+
+Converts String to int.
+
+```java id="m1"
+int num =
+        Integer.parseInt("100");
+```
+
+---
+
+🔹 valueOf()
+
+Converts primitive/string to wrapper object.
+
+```java id="m2"
+Integer obj =
+        Integer.valueOf("200");
+```
+
+---
+
+🔹 toString()
+
+Converts value to String.
+
+```java id="m3"
+String str =
+        Integer.toString(100);
+```
+
+---
+
+🔹 compareTo()
+
+Compares wrapper objects.
+
+```java id="m4"
+Integer a = 10;
+Integer b = 20;
+
+System.out.println(
+        a.compareTo(b));
+```
+
+---
+
+📌 NumberFormatException Example
+
+```java id="m5"
+Integer.parseInt("abc");
+```
+
+---
+
+❌ Output
+
+```text id="m6"
+NumberFormatException
+```
+
+---
+
+📊 Autoboxing vs Unboxing
+
+| Feature    | Autoboxing         | Unboxing           |
+| ---------- | ------------------ | ------------------ |
+| Conversion | Primitive → Object | Object → Primitive |
+| Automatic  | ✔ Yes              | ✔ Yes              |
+| Example    | int → Integer      | Integer → int      |
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Mistakes
+
+❌ Parsing invalid strings
+❌ Comparing wrapper objects using `==`
+❌ Ignoring null values during unboxing
+
+---
+
+📌 Example
+
+```java id="m7"
+Integer a = null;
+
+int x = a;
+```
+
+👉 Causes:
+
+```text id="m8"
+NullPointerException
+```
+
+---
+
+🧠 Real Insight
+
+👉 Wrapper Classes are heavily used in:
+
+* Collections Framework
+* JDBC
+* Spring Framework
+* Hibernate
+* Data Processing Applications
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Wrapper Classes convert primitives into objects
+✔ Java provides wrappers for all primitive types
+✔ Autoboxing converts primitive → object automatically
+✔ Unboxing converts object → primitive automatically
+✔ Wrapper classes provide useful utility methods
+
