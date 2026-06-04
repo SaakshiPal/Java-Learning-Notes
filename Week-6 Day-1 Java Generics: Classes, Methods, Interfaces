@@ -1,0 +1,312 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 6 – Day 1 Java Generics: Classes, Methods & Interfaces ☕
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Generics allow classes, methods, and interfaces to work with different data types while maintaining type safety.
+
+👉 Introduced in Java 5 to:
+
+✔ Eliminate type casting
+✔ Improve code reusability
+✔ Provide compile-time type checking
+
+---
+
+🎯 Why Generics?
+
+Without Generics:
+
+```java id="g1"
+ArrayList list = new ArrayList();
+
+list.add("Java");
+list.add(100);
+```
+
+👉 Different data types can be stored, causing runtime errors.
+
+---
+
+✅ With Generics
+
+```java id="g2"
+ArrayList<String> list =
+        new ArrayList<>();
+
+list.add("Java");
+```
+
+✔ Only String values allowed.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1. Generic Class
+
+A generic class can work with any data type.
+
+---
+
+# 📌 Syntax
+
+```java id="g3"
+class ClassName<T> {
+}
+```
+
+---
+
+💻 Example
+
+```java id="g4"
+class Box<T> {
+
+    private T value;
+
+    void setValue(T value) {
+        this.value = value;
+    }
+
+    T getValue() {
+        return value;
+    }
+}
+```
+
+---
+
+▶️ Using Generic Class
+
+```java id="g5"
+Box<String> box =
+        new Box<>();
+
+box.setValue("Java");
+
+System.out.println(
+        box.getValue());
+```
+
+---
+
+📌 Multiple Type Parameters
+
+```java id="g6"
+class Pair<K, V> {
+
+    K key;
+    V value;
+
+    Pair(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
+}
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 2. Generic Methods
+
+A method can have its own type parameter.
+
+---
+
+📌 Syntax
+
+```java id="g7"
+<T> returnType methodName(T value)
+```
+
+---
+
+💻 Example
+
+```java id="g8"
+class Demo {
+
+    static <T> void printData(T data) {
+        System.out.println(data);
+    }
+
+    public static void main(String[] args) {
+
+        printData("Java");
+        printData(100);
+        printData(3.14);
+    }
+}
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3. Generic Interfaces
+
+Interfaces can also be generic.
+
+---
+
+📌 Syntax
+
+```java id="g9"
+interface InterfaceName<T> {
+}
+```
+
+---
+
+💻 Example
+
+```java id="g10"
+interface Printer<T> {
+
+    void print(T value);
+}
+```
+
+---
+
+📌 Implementation
+
+```java id="g11"
+class StringPrinter
+        implements Printer<String> {
+
+    public void print(String value) {
+        System.out.println(value);
+    }
+}
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4. Bounded Generics
+
+Restricts allowed types.
+
+---
+
+📌 Example
+
+```java id="g12"
+class Calculator<T extends Number> {
+
+    T number;
+
+    Calculator(T number) {
+        this.number = number;
+    }
+}
+```
+
+---
+
+# ✔ Allowed
+
+```java id="g13"
+Calculator<Integer> c1 =
+        new Calculator<>(10);
+
+Calculator<Double> c2 =
+        new Calculator<>(5.5);
+```
+
+---
+
+❌ Not Allowed
+
+```java id="g14"
+Calculator<String> c3 =
+        new Calculator<>("Java");
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 5. Wildcards
+
+Represent unknown types.
+
+---
+
+📌 Unbounded Wildcard
+
+```java id="g15"
+List<?> list;
+```
+
+---
+
+📌 Upper Bounded Wildcard
+
+```java id="g16"
+List<? extends Number> list;
+```
+
+---
+
+📌 Lower Bounded Wildcard
+
+```java id="g17"
+List<? super Integer> list;
+```
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Benefits of Generics
+
+| Benefit     | Description                   |
+| ----------- | ----------------------------- |
+| Type Safety | Errors caught at compile time |
+| Reusability | Works with multiple types     |
+| Readability | Cleaner code                  |
+| No Casting  | Automatic type handling       |
+
+---
+
+⚠️ Common Mistakes
+
+❌ Using raw types
+
+```java id="g18"
+ArrayList list = new ArrayList();
+```
+
+---
+
+❌ Incorrect bounds
+
+```java id="g19"
+class Test<T extends String> {
+}
+```
+
+---
+
+❌ Mixing incompatible types
+
+---
+
+🧠 Real-World Usage
+
+Generics are heavily used in:
+
+* Collections Framework
+* Spring Framework
+* Hibernate
+* JDBC
+* Java Streams API
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Generics provide type safety
+✔ Generic classes work with different data types
+✔ Generic methods increase code reusability
+✔ Generic interfaces support flexible implementations
+✔ Bounded generics restrict allowed types
+✔ Wildcards represent unknown types
+
