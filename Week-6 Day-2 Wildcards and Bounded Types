@@ -1,0 +1,349 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 6 – Day 2 Wildcards & Bounded Types in Java Generics ☕
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+Wildcards and Bounded Types make Java Generics more flexible and type-safe.
+
+👉 They help:
+
+✔ Work with unknown types
+✔ Restrict allowed data types
+✔ Increase code reusability
+✔ Improve type safety
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1. What are Wildcards?
+
+A wildcard is represented using:
+
+```java id="w1"
+?
+```
+
+👉 It represents an unknown type.
+
+---
+
+📌 Example
+
+```java id="w2"
+List<?> list;
+```
+
+This list can hold any type of object.
+
+---
+
+🎯 Why Use Wildcards?
+
+Without Wildcards:
+
+```java id="w3"
+List<String> names =
+        new ArrayList<>();
+```
+
+Only `String` objects are allowed.
+
+---
+
+With Wildcards:
+
+```java id="w4"
+List<?> data;
+```
+
+Can reference:
+
+* List<String>
+* List<Integer>
+* List<Double>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 2. Unbounded Wildcards
+
+Allows any type.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="w5"
+List<?> list;
+```
+
+---
+
+💻 Example
+
+```java id="w6"
+import java.util.*;
+
+public class Demo {
+
+    static void display(List<?> list) {
+
+        for (Object obj : list) {
+            System.out.println(obj);
+        }
+    }
+
+    public static void main(String[] args) {
+
+        List<String> names =
+                Arrays.asList("Java", "Python");
+
+        display(names);
+    }
+}
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3. Upper Bounded Wildcards
+
+Restricts types to a class or its subclasses.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="w7"
+<? extends ClassName>
+```
+
+---
+
+💻 Example
+
+```java id="w8"
+List<? extends Number> numbers;
+```
+
+---
+
+✔ Allowed Types
+
+```java id="w9"
+List<Integer> list1;
+List<Double> list2;
+List<Float> list3;
+```
+
+---
+
+❌ Not Allowed
+
+```java id="w10"
+List<String> list;
+```
+
+---
+
+📌 Example Program
+
+```java id="w11"
+static double sum(
+        List<? extends Number> list) {
+
+    double total = 0;
+
+    for (Number n : list) {
+        total += n.doubleValue();
+    }
+
+    return total;
+}
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4. Lower Bounded Wildcards
+
+Restricts types to a class or its superclasses.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="w12"
+<? super ClassName>
+```
+
+---
+
+💻 Example
+
+```java id="w13"
+List<? super Integer> list;
+```
+
+---
+
+✔ Allowed Types
+
+```java id="w14"
+List<Integer> list1;
+List<Number> list2;
+List<Object> list3;
+```
+
+---
+
+❌ Not Allowed
+
+```java id="w15"
+List<Double> list;
+```
+
+---
+
+📌 Example Program
+
+```java id="w16"
+static void addNumbers(
+        List<? super Integer> list) {
+
+    list.add(10);
+    list.add(20);
+}
+```
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 5. Bounded Type Parameters
+
+Used to restrict generic types.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📌 Syntax
+
+```java id="b1"
+class ClassName<T extends Type> {
+}
+```
+
+---
+
+💻 Example
+
+```java id="b2"
+class Calculator<T extends Number> {
+
+    T number;
+
+    Calculator(T number) {
+        this.number = number;
+    }
+
+    void display() {
+        System.out.println(number);
+    }
+}
+```
+
+---
+
+✔ Valid Usage
+
+```java id="b3"
+Calculator<Integer> c1 =
+        new Calculator<>(100);
+
+Calculator<Double> c2 =
+        new Calculator<>(99.9);
+```
+
+---
+
+❌ Invalid Usage
+
+```java id="b4"
+Calculator<String> c3 =
+        new Calculator<>("Java");
+```
+
+---
+
+🔹 Multiple Bounds
+
+A type can have multiple bounds.
+
+---
+
+📌 Example
+
+```java id="b5"
+class Demo<T extends Number & Comparable<T>> {
+}
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Wildcards vs Bounded Types
+
+| Feature     | Wildcards     | Bounded Types           |
+| ----------- | ------------- | ----------------------- |
+| Symbol      | ?             | T                       |
+| Purpose     | Unknown types | Restrict generic types  |
+| Flexibility | High          | Controlled              |
+| Usage       | Collections   | Generic Classes/Methods |
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Mistakes
+
+❌ Using wrong bounds
+
+```java id="e1"
+List<? extends String> list;
+```
+
+---
+
+❌ Adding values to upper bounded collections
+
+```java id="e2"
+List<? extends Number> list;
+list.add(10);
+```
+
+---
+
+❌ Confusing `extends` and `super`
+
+---
+
+🧠 Real Insight
+
+👉 Java Collections Framework heavily uses:
+
+* Wildcards
+* Bounded Types
+* Generic Constraints
+
+Examples:
+
+* Collections.sort()
+* Streams API
+* Spring Framework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ `?` represents an unknown type
+✔ Unbounded wildcards accept any type
+✔ Upper bounded wildcards use `extends`
+✔ Lower bounded wildcards use `super`
+✔ Bounded types restrict generic parameters
+✔ Generics improve type safety and reusability
+
+
