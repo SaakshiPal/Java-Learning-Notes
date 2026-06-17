@@ -1,0 +1,308 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 6 – Day 5 Introduction to Java Collections Framework ☕
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+The Java Collections Framework (JCF) is a set of classes and interfaces used to store and manipulate groups of data efficiently.
+
+👉 Collections provide:
+
+✔ Dynamic storage
+✔ Efficient data management
+✔ Built-in algorithms
+✔ Easy data retrieval
+
+---
+
+🎯 Why Collections?
+
+Arrays have limitations:
+
+❌ Fixed size
+
+❌ Difficult insertion and deletion
+
+❌ Limited built-in methods
+
+Collections solve these problems.
+
+---
+
+📌 Example
+
+```java id="c1"
+import java.util.ArrayList;
+
+ArrayList<String> names =
+        new ArrayList<>();
+
+names.add("Java");
+names.add("Python");
+```
+
+---
+
+🏗️ Collection Framework Hierarchy
+
+```text id="c2"
+Iterable
+    │
+Collection
+    │
+├── List
+├── Set
+└── Queue
+
+Map (Separate Interface)
+```
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1. Collection Interface
+
+Root interface of the Collection Framework.
+
+Common methods:
+
+```java id="c3"
+add()
+remove()
+contains()
+size()
+clear()
+isEmpty()
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 2. List Interface
+
+Stores ordered elements.
+
+✔ Maintains insertion order
+✔ Allows duplicates
+
+---
+
+📌 Implementations
+
+* ArrayList
+* LinkedList
+* Vector
+* Stack
+
+---
+
+📌 Example
+
+```java id="c4"
+List<String> list =
+        new ArrayList<>();
+
+list.add("Java");
+list.add("Java");
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3. Set Interface
+
+Stores unique elements.
+
+✔ No duplicates allowed
+
+---
+
+📌 Implementations
+
+* HashSet
+* LinkedHashSet
+* TreeSet
+
+---
+
+📌 Example
+
+```java id="c5"
+Set<Integer> set =
+        new HashSet<>();
+
+set.add(10);
+set.add(10);
+```
+
+Output:
+
+```text id="c6"
+10
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4. Queue Interface
+
+Used for processing elements in sequence.
+
+✔ FIFO (First In First Out)
+
+---
+
+📌 Implementations
+
+* PriorityQueue
+* LinkedList
+* ArrayDeque
+
+---
+
+📌 Example
+
+```java id="c7"
+Queue<Integer> queue =
+        new LinkedList<>();
+
+queue.add(10);
+queue.add(20);
+
+System.out.println(queue.poll());
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 5. Map Interface
+
+Stores key-value pairs.
+
+👉 Not part of Collection interface hierarchy.
+
+---
+
+📌 Implementations
+
+* HashMap
+* LinkedHashMap
+* TreeMap
+* Hashtable
+
+---
+
+📌 Example
+
+```java id="c8"
+Map<Integer, String> map =
+        new HashMap<>();
+
+map.put(1, "Java");
+map.put(2, "Python");
+```
+
+---
+
+# 📊 Collections Overview
+
+| Interface | Ordered   | Duplicates  | Example    |
+| --------- | --------- | ----------- | ---------- |
+| List      | ✔ Yes     | ✔ Yes       | ArrayList  |
+| Set       | Depends   | ❌ No        | HashSet    |
+| Queue     | ✔ Yes     | ✔ Yes       | LinkedList |
+| Map       | Key-Value | Keys Unique | HashMap    |
+
+---
+
+⚡ Common Collection Methods
+
+---
+
+🔹 add()
+
+```java id="m1"
+list.add("Java");
+```
+
+---
+
+🔹 remove()
+
+```java id="m2"
+list.remove("Java");
+```
+
+---
+
+🔹 contains()
+
+```java id="m3"
+list.contains("Java");
+```
+
+---
+
+🔹 size()
+
+```java id="m4"
+list.size();
+```
+
+---
+
+🔹 clear()
+
+```java id="m5"
+list.clear();
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Advantages of Collections
+
+✔ Dynamic resizing
+✔ Built-in algorithms
+✔ Improved performance
+✔ Easier coding
+
+---
+
+⚠️ Common Mistakes
+
+❌ Using wrong collection type
+
+❌ Ignoring Generics
+
+```java id="e1"
+ArrayList list =
+        new ArrayList();
+```
+
+---
+
+❌ Not understanding List vs Set
+
+---
+
+🧠 Real-World Usage
+
+Collections are used in:
+
+* Banking Systems
+* E-Commerce Applications
+* Social Media Platforms
+* Enterprise Applications
+* Spring Framework
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Collections store and manage groups of data
+✔ Collection Framework provides reusable data structures
+✔ List allows duplicates
+✔ Set stores unique values
+✔ Queue follows FIFO
+✔ Map stores key-value pairs
+
+
+```
+```
