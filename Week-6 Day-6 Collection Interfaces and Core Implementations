@@ -1,0 +1,346 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 6 – Day 6 Collection Interfaces & Core Implementations ☕
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+The Java Collections Framework (JCF) provides a set of interfaces and classes for storing and manipulating data efficiently.
+
+👉 Understanding collection interfaces and their implementations is essential for:
+
+✔ DSA preparation
+✔ Java interviews
+✔ Real-world application development
+
+---
+
+🏗️ Collection Framework Hierarchy
+
+```text id="c1"
+Iterable
+   │
+Collection
+   │
+├── List
+├── Set
+└── Queue
+
+Map (Separate Interface)
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1. List Interface
+
+A List stores elements in an ordered sequence.
+
+---
+
+📌 Features
+
+✔ Maintains insertion order
+
+✔ Allows duplicate elements
+
+✔ Supports index-based access
+
+---
+
+📌 Common Implementations
+
+* ArrayList
+* LinkedList
+* Vector
+* Stack
+
+---
+
+💻 Example
+
+```java id="l1"
+import java.util.*;
+
+List<String> list =
+        new ArrayList<>();
+
+list.add("Java");
+list.add("Python");
+list.add("Java");
+
+System.out.println(list);
+```
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 2. Set Interface
+
+A Set stores unique elements.
+
+---
+
+📌 Features
+
+✔ No duplicate values
+
+✔ Faster searching
+✔ Useful for uniqueness checks
+
+---
+
+📌 Common Implementations
+
+* HashSet
+* LinkedHashSet
+* TreeSet
+
+---
+
+💻 Example
+
+```java id="s1"
+Set<Integer> set =
+        new HashSet<>();
+
+set.add(10);
+set.add(20);
+set.add(10);
+
+System.out.println(set);
+```
+
+Output:
+
+```text id="s2"
+[10, 20]
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3. Queue Interface
+
+Queue follows FIFO (First In First Out).
+
+---
+
+📌 Features
+
+✔ Sequential processing
+
+✔ Efficient insertion/removal
+
+---
+
+📌 Common Implementations
+
+* LinkedList
+* PriorityQueue
+* ArrayDeque
+
+---
+
+💻 Example
+
+```java id="q1"
+Queue<Integer> queue =
+        new LinkedList<>();
+
+queue.add(10);
+queue.add(20);
+
+System.out.println(queue.poll());
+```
+
+Output:
+
+```text id="q2"
+10
+```
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4. Deque Interface
+
+Deque stands for Double-Ended Queue.
+
+---
+
+📌 Features
+
+✔ Insert/remove from both ends
+
+✔ Supports stack and queue operations
+
+---
+
+📌 Implementations
+
+* ArrayDeque
+* LinkedList
+
+---
+
+💻 Example
+
+```java id="d1"
+Deque<Integer> deque =
+        new ArrayDeque<>();
+
+deque.addFirst(10);
+deque.addLast(20);
+
+System.out.println(deque);
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 5. Map Interface
+
+Stores data as key-value pairs.
+
+👉 Map is not part of Collection interface.
+
+---
+
+📌 Features
+
+✔ Unique keys
+✔ Fast retrieval
+✔ Key-value mapping
+
+---
+
+📌 Common Implementations
+
+* HashMap
+* LinkedHashMap
+* TreeMap
+* Hashtable
+
+---
+
+💻 Example
+
+```java id="m1"
+Map<Integer, String> map =
+        new HashMap<>();
+
+map.put(1, "Java");
+map.put(2, "Python");
+
+System.out.println(map);
+```
+
+---
+
+📊 Core Implementations Comparison
+
+| Interface | Implementation | Ordered        | Duplicates  |
+| --------- | -------------- | -------------- | ----------- |
+| List      | ArrayList      | ✔ Yes          | ✔ Yes       |
+| List      | LinkedList     | ✔ Yes          | ✔ Yes       |
+| Set       | HashSet        | ❌ No          | ❌ No       |
+| Set       | LinkedHashSet  | ✔ Yes          | ❌ No       |
+| Set       | TreeSet        | Sorted         | ❌ No       |
+| Queue     | PriorityQueue  | Priority Based | ✔ Yes       |
+| Map       | HashMap        | ❌ No          | Keys Unique|
+| Map       | TreeMap        | Sorted Keys    | Keys Unique |
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚡ Common Collection Methods
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 add()
+
+```java id="cm1"
+list.add("Java");
+```
+
+---
+
+🔹 remove()
+
+```java id="cm2"
+list.remove("Java");
+```
+
+---
+
+🔹 contains()
+
+```java id="cm3"
+list.contains("Java");
+```
+
+---
+
+🔹 size()
+
+```java id="cm4"
+list.size();
+```
+
+---
+
+🔹 clear()
+
+```java id="cm5"
+list.clear();
+```
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🎯 Choosing the Right Collection
+
+| Requirement            | Recommended Collection |
+| ---------------------- | ---------------------- |
+| Fast Random Access     | ArrayList              |
+| Frequent Insert/Delete | LinkedList             |
+| Unique Values          | HashSet                |
+| Sorted Data            | TreeSet                |
+| Key-Value Storage      | HashMap                |
+| Priority Processing    | PriorityQueue          |
+
+---
+
+⚠️ Common Mistakes
+
+❌ Using ArrayList when frequent insertions are needed
+❌ Using HashSet when order matters
+❌ Ignoring Generics
+
+```java id="e1"
+ArrayList list =
+        new ArrayList();
+```
+
+---
+
+🧠 Real Insight
+
+👉 Most enterprise applications heavily use:
+
+* ArrayList
+* HashMap
+* HashSet
+* PriorityQueue
+
+These collections are also among the most frequently asked interview topics.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ Collection Framework provides reusable data structures
+✔ List maintains order and allows duplicates
+✔ Set stores unique values
+✔ Queue follows FIFO
+✔ Map stores key-value pairs
+✔ Choosing the right collection improves performance
+
+
+```
+```
