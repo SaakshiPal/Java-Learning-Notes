@@ -1,0 +1,352 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Week 6 – Day 7 ArrayList, LinkedList, HashSet & TreeSet ☕
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧠 Introduction
+
+The Java Collections Framework provides different collection classes for different use cases.
+
+The most commonly used implementations are:
+
+✔ ArrayList
+✔ LinkedList
+✔ HashSet
+✔ TreeSet
+
+👉 Choosing the right collection improves application performance and efficiency.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 1. ArrayList
+
+`ArrayList` is a dynamic array that grows automatically when elements are added.
+
+---
+
+📌 Features
+
+✔ Dynamic size
+
+✔ Maintains insertion order
+
+✔ Allows duplicate elements
+
+✔ Fast random access using index
+
+---
+
+📌 Example
+
+```java
+import java.util.ArrayList;
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        ArrayList<String> languages =
+                new ArrayList<>();
+
+        languages.add("Java");
+        languages.add("Python");
+        languages.add("Java");
+
+        System.out.println(languages);
+    }
+}
+```
+
+---
+
+🎯 Advantages
+
+✔ Fast element access
+✔ Easy traversal
+✔ Dynamic resizing
+
+---
+
+⚠️ Disadvantages
+
+❌ Slow insertion/deletion in the middle
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 2. LinkedList
+
+`LinkedList` stores elements using nodes connected through links.
+
+---
+
+📌 Features
+
+✔ Dynamic size
+
+✔ Maintains insertion order
+
+✔ Allows duplicate elements
+
+✔ Efficient insertion and deletion
+
+---
+
+📌 Example
+
+```java
+import java.util.LinkedList;
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        LinkedList<String> cities =
+                new LinkedList<>();
+
+        cities.add("Delhi");
+        cities.add("Mumbai");
+        cities.addFirst("Kolkata");
+
+        System.out.println(cities);
+    }
+}
+```
+
+---
+
+🎯 Advantages
+
+✔ Fast insertion
+✔ Fast deletion
+✔ Can be used as Queue and Deque
+
+---
+
+⚠️ Disadvantages
+
+❌ Slower random access compared to ArrayList
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 3. HashSet
+
+`HashSet` stores only unique elements.
+
+---
+
+📌 Features
+
+✔ No duplicate elements
+
+✔ Unordered collection
+
+✔ Fast searching
+
+---
+
+📌 Example
+
+```java
+import java.util.HashSet;
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        HashSet<Integer> numbers =
+                new HashSet<>();
+
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(10);
+
+        System.out.println(numbers);
+    }
+}
+```
+
+---
+
+📌 Output
+
+```text
+[10, 20]
+```
+
+---
+
+🎯 Advantages
+
+✔ Very fast search
+✔ Prevents duplicates
+
+---
+
+⚠️ Disadvantages
+
+❌ Does not maintain insertion order
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 4. TreeSet
+
+`TreeSet` stores unique elements in sorted order.
+
+---
+
+📌 Features
+
+✔ Automatically sorts elements
+✔ No duplicates
+✔ Uses Red-Black Tree internally
+
+---
+
+📌 Example
+
+```java
+import java.util.TreeSet;
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        TreeSet<Integer> numbers =
+                new TreeSet<>();
+
+        numbers.add(40);
+        numbers.add(10);
+        numbers.add(30);
+        numbers.add(20);
+
+        System.out.println(numbers);
+    }
+}
+```
+
+---
+
+📌 Output
+
+```text
+[10, 20, 30, 40]
+```
+
+---
+
+🎯 Advantages
+
+✔ Sorted data
+
+✔ Efficient searching
+
+---
+
+⚠️ Disadvantages
+
+❌ Slower than HashSet
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📊 Comparison Table
+
+| Feature            | ArrayList     | LinkedList         | HashSet    | TreeSet        |
+| ------------------ | ------------- | ------------------ | ---------- | -------------- |
+| Maintains Order    | ✔ Yes         | ✔ Yes             | ❌ No      | ✔ Sorted      |
+| Allows Duplicates  | ✔ Yes         | ✔ Yes             | ❌ No      | ❌ No         |
+| Index Access       | ✔ Fast        | ❌ Slow           | ❌ No      | ❌ No         |
+| Insertion          | Medium        | Fast               | Fast       | Medium         |
+| Searching          | Medium        | Medium             | Fast       | Fast           |
+| Internal Structure | Dynamic Array | Doubly Linked List | Hash Table | Red-Black Tree |
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+💻 Common Methods
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🔹 add()
+
+```java
+list.add("Java");
+```
+
+---
+
+🔹 remove()
+
+```java
+list.remove("Java");
+```
+
+---
+
+🔹 contains()
+
+```java
+set.contains(20);
+```
+
+---
+
+🔹 size()
+
+```java
+list.size();
+```
+
+---
+
+🔹 clear()
+
+```java
+list.clear();
+```
+
+---
+
+🎯 When to Use Which?
+
+| Requirement            | Best Choice |
+| ---------------------- | ----------- |
+| Fast Random Access     | ArrayList   |
+| Frequent Insert/Delete | LinkedList  |
+| Unique Elements        | HashSet     |
+| Sorted Unique Data     | TreeSet     |
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⚠️ Common Mistakes
+
+❌ Using ArrayList for heavy insertions
+❌ Expecting HashSet to preserve insertion order
+❌ Using TreeSet with non-comparable objects
+❌ Ignoring Generics
+
+```java
+ArrayList list = new ArrayList();
+```
+
+---
+
+🧠 Real-World Usage
+
+These collections are widely used in:
+
+* Banking Applications
+* Inventory Management Systems
+* Student Management Systems
+* E-Commerce Platforms
+* Spring Boot Applications
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+📚 Key Takeaways
+
+✔ ArrayList provides fast random access
+✔ LinkedList is efficient for insertions and deletions
+✔ HashSet stores unique unordered elements
+✔ TreeSet stores unique sorted elements
+✔ Choosing the right collection improves application performance
+
